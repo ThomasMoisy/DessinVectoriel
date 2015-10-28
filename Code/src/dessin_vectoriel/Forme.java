@@ -3,12 +3,19 @@ package dessin_vectoriel;
 /*
  * Represente une forme geometrique quelconque (carre, rond, triangle, etc)
  */
-public class Forme implements IForme {
+public class Forme extends Element implements IForme {
 	
 	private boolean remplissage;
-	private boolean visibilite;
-	private Couleur couleur;
-	private Point barycentre;
+	private Point barycentre;//BM : sert de position a la figure
+	
+	
+	
+	public Forme(boolean remplissage, boolean visibilite, Couleur couleur, int epaisseur, Point barycentre) {
+		super(visibilite, couleur, epaisseur);
+		this.remplissage = remplissage;
+		this.barycentre = barycentre;
+	}
+	
 	
 	public boolean isRemplissage() {
 		return remplissage;
@@ -16,18 +23,7 @@ public class Forme implements IForme {
 	public void setRemplissage(boolean remplissage) {
 		this.remplissage = remplissage;
 	}
-	public boolean isVisibilite() {
-		return visibilite;
-	}
-	public void setVisibilite(boolean visibilite) {
-		this.visibilite = visibilite;
-	}
-	public Couleur getCouleur() {
-		return couleur;
-	}
-	public void setCouleur(Couleur couleur) {
-		this.couleur = couleur;
-	}
+	
 	public Point getBarycentre() {
 		return barycentre;
 	}

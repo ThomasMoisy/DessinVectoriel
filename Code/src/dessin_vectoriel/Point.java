@@ -23,4 +23,13 @@ public class Point {
 		Y = y;
 	}
 	
+	//pourrait etre utile par la suite
+	public boolean equals(Object o){
+		if(!(o instanceof Point)){
+			return false;
+		}
+		else{
+			return (this.getX()==((Point)o).getX())&&(this.getY()==((Point)o).getY());
+		}
+	}
 }

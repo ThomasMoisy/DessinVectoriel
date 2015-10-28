@@ -1,6 +1,6 @@
 package dessin_vectoriel;
 
-public interface IForme {
+public interface IForme extends IElement {
 
 	public boolean isRemplissage();
 	public void setRemplissage(boolean remplissage);
