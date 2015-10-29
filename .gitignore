@@ -4,3 +4,6 @@ Code/.project
 Code/.settings
 .DS_Store
 .recommenders/
+Code/bin
+RemoteSystemsTempFiles
+.gitignoreswp
