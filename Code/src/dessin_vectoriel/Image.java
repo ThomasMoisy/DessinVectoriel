@@ -1,10 +1,14 @@
 package dessin_vectoriel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Image implements IImage {
 
-	private List<Element> elements;
+	private List<Element> elements = new ArrayList<Element>();
+	
+	public Image() {
+	}
 
 	public Image(List<Element> elements) {
 		super();
@@ -17,6 +21,10 @@ public class Image implements IImage {
 
 	public void setElements(List<Element> elements) {
 		this.elements = elements;
+	}
+	
+	public void add(Element e) {
+		elements.add(e);
 	}
 	
 	
