@@ -1,9 +1,9 @@
-package Script;
+package script;
 
 public class Alternative extends Script {
 
 	@Override
-	public void execute() {
+	public void executer() {
 		// TODO Auto-generated method stub
 		
 	}

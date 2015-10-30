@@ -1,7 +1,7 @@
-package Script;
+package script;
+
 
 public interface IScript {
 
-	public void execute();
-	
+	public void executer();
 }
