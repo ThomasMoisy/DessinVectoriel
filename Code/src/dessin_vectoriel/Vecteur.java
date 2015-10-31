@@ -23,6 +23,10 @@ public class Vecteur {
 		this.image = image;
 	}
 	
+	public String toString() {
+		return origine + "--" + image;
+	}
+	
 	//BM : permet de calculer la norme
 	public double norme(){
 		int x1 = this.getOrigine().getX();

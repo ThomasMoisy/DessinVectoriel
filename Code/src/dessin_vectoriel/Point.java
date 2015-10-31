@@ -23,6 +23,10 @@ public class Point {
 		Y = y;
 	}
 	
+	public String toString() {
+		return "(" + X + ", " + Y + ")";
+	}
+	
 	//pourrait etre utile par la suite
 	public boolean equals(Object o){
 		if(!(o instanceof Point)){

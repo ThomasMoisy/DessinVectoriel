@@ -18,6 +18,10 @@ public class Droite extends Element implements IElement{
 		this.vecteur = vecteur;
 	}
 	
+	public String toString() {
+		return "Droite(" + vecteur + ")";
+	}
+	
 	//BM : peut etre a creer dans Element et dans ce cas a appeler creerDroite
 	public Droite creer(boolean visibilite, Couleur couleur, int epaisseur, Vecteur d){
 		return new Droite(visibilite, couleur, epaisseur, d);

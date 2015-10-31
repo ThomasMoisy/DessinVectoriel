@@ -12,4 +12,7 @@ public class Triangle extends Forme implements IForme {
 		this.p3 = p3;
 	}
 	
+	public String toString() {
+		return "Triangle(" + p1 + ", " + p2 + ", " + p3 + ")";
+	}
 }

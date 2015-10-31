@@ -15,6 +15,10 @@ public class Image implements IImage {
 		this.elements = elements;
 	}
 
+	public Image(Image i) {
+		this.elements = i.getElements();
+	}
+
 	public List<Element> getElements() {
 		return elements;
 	}
@@ -25,6 +29,10 @@ public class Image implements IImage {
 	
 	public void add(Element e) {
 		elements.add(e);
+	}
+	
+	public void addAll(List<Element> elements) {
+		this.elements.addAll(elements);
 	}
 	
 	

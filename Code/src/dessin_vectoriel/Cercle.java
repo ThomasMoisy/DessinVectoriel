@@ -23,5 +23,8 @@ public class Cercle extends Forme implements IForme{
 	public Cercle creer(boolean remplissage, boolean visibilite, Couleur couleur, int epaisseur, Point barycentre, int r){
 		return new Cercle(remplissage, visibilite, couleur, epaisseur, barycentre,r);
 	}
-
+	
+	public String toString() {
+		return "Cercle("+this.getBarycentre()+", "+R+")";
+	}
 }
