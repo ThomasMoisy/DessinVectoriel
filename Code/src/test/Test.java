@@ -5,6 +5,7 @@ import builders.DessinerBuilder;
 import builders.ForBuilder;
 import builders.PointsBuilder;
 import builders.SequenceBuilder;
+import dessin_vectoriel.Image;
 import script.Script;
 
 
@@ -25,7 +26,7 @@ public class Test {
 						.couleur(2)
 						.script())
 				.add(new ForBuilder()
-						.to(5)
+						.to(3)
 						.variable("i")
 						//.add(new PointsBuilder()
 						//		.point(new Variable("i"), new Entier(3)))
@@ -38,6 +39,11 @@ public class Test {
 								.script())
 						.script())
 				.script();
+		//Exécution du script qui va créer un objet de type Image qui sera notre dessin vectoriel
+		Image image = script.executer(new Image());
+		System.out.println(image.getElements());
+		
+		
 		//Fabrique fab = new FabriqueSVG();
 		//fab.traduire(script)
 		
