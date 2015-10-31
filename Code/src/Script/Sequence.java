@@ -3,6 +3,8 @@ package script;
 import java.util.ArrayList;
 import java.util.List;
 
+import dessin_vectoriel.Image;
+
 public class Sequence extends Script{
 	private List<Script> scripts = new ArrayList<Script>();
 	
@@ -26,11 +28,13 @@ public class Sequence extends Script{
 		scripts.add(d2);
 	}
 
+
 	@Override
-	public void executer() {
+	public Image executer(Image image) {
 		for (Script script : scripts) {
-			script.executer();
+			image = script.executer(image);					
 		}
+		return image;
 	}
 	
 }

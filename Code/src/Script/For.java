@@ -1,5 +1,6 @@
 package script;
 
+import dessin_vectoriel.Image;
 
 public class For extends Script{
 	private Sequence sequence;
@@ -14,10 +15,12 @@ public class For extends Script{
 	}
 
 
-
 	@Override
-	public void executer() {
-		// TODO Auto-generated method stub
+	public Image executer(Image image) {
+		for (int j = 0; j < n; j++) {
+			image = sequence.executer(image);
+		}
+		return image;
 	}
 
 }

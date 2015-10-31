@@ -1,5 +1,6 @@
 package script;
 
+import dessin_vectoriel.Image;
 
 public class AffectationVariable extends InstructionTerminale {
 	String identifiant;
@@ -27,9 +28,11 @@ public class AffectationVariable extends InstructionTerminale {
 		this.valeur = valeur;
 	}
 
+
 	@Override
-	public void executer() {
-		Contexte.contexte.bind(identifiant, valeur);
+	public Image executer(Image image) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

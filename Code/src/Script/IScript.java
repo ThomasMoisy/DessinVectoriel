@@ -1,7 +1,8 @@
 package script;
 
+import dessin_vectoriel.Image;
 
 public interface IScript {
 
-	public void executer();
+	public Image executer(Image image);
 }
