@@ -5,7 +5,7 @@ import java.util.List;
 
 import dessin_vectoriel.Cercle;
 import dessin_vectoriel.Couleur;
-import dessin_vectoriel.IElement;
+import dessin_vectoriel.Element;
 import dessin_vectoriel.Point;
 import dessin_vectoriel.Triangle;
 import script.Dessiner;
@@ -39,7 +39,7 @@ public class TriangleBuilder {
 
 	public Script script() {
 		Triangle triangle = new Triangle(false, true, couleur, 1, p1, p2, p3);
-		List<IElement> list = new ArrayList<IElement>();
+		List<Element> list = new ArrayList<Element>();
 		list.add(triangle);
 		return new Dessiner(list, couleur);
 	}

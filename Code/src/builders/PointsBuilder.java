@@ -5,7 +5,7 @@ import java.util.List;
 
 import dessin_vectoriel.Couleur;
 import dessin_vectoriel.Droite;
-import dessin_vectoriel.IElement;
+import dessin_vectoriel.Element;
 import dessin_vectoriel.Point;
 import dessin_vectoriel.Vecteur;
 import script.Dessiner;
@@ -30,7 +30,7 @@ public class PointsBuilder extends ScriptBuilder {
 	}
 	
 	public Script script() {
-		List<IElement> list = new ArrayList<IElement>();
+		List<Element> list = new ArrayList<Element>();
 		for (int i = 0; i < points.size()-1; i++) {
 			Vecteur v = new Vecteur(points.get(i), points.get(i+1));
 			Droite d = new Droite(true, couleur, 1, v);

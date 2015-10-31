@@ -5,7 +5,7 @@ import java.util.List;
 
 import dessin_vectoriel.Cercle;
 import dessin_vectoriel.Couleur;
-import dessin_vectoriel.IElement;
+import dessin_vectoriel.Element;
 import dessin_vectoriel.Point;
 import script.Dessiner;
 import script.Script;
@@ -35,7 +35,7 @@ public class CercleBuilder extends ScriptBuilder {
 
 	public Script script() {
 		Cercle cercle = new Cercle(false, true, couleur, 1, centre, rayon);
-		List<IElement> list = new ArrayList<IElement>();
+		List<Element> list = new ArrayList<Element>();
 		list.add(cercle);
 		return new Dessiner(list, couleur);
 	}
