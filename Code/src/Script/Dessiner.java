@@ -6,6 +6,10 @@ import dessin_vectoriel.Couleur;
 import dessin_vectoriel.Element;
 import dessin_vectoriel.Image;
 
+/**
+ * Instruction terminale representant l'instruction dessiner() 
+ *
+ */
 public class Dessiner extends InstructionTerminale{
 	private List<Element> elements;
 	private Couleur couleur;

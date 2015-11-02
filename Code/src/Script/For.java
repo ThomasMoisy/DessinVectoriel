@@ -2,6 +2,10 @@ package script;
 
 import dessin_vectoriel.Image;
 
+/**
+ * Instruction representant une boucle for 
+ *
+ */
 public class For extends Script{
 	private Sequence sequence;
 	private String variable;

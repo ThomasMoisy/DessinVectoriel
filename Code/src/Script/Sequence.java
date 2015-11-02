@@ -5,6 +5,10 @@ import java.util.List;
 
 import dessin_vectoriel.Image;
 
+/**	
+ * 
+ * Instruction sequence qui est une suite de script
+ */
 public class Sequence extends Script{
 	private List<Script> scripts = new ArrayList<Script>();
 	

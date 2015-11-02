@@ -2,6 +2,11 @@ package script;
 
 import dessin_vectoriel.Image;
 
+/**
+ * 
+ * Classe representant l'instruction d'affectation de valeur a une variable
+ * Pas encore implementee entierement
+ */
 public class AffectationVariable extends InstructionTerminale {
 	String identifiant;
 	float valeur;
