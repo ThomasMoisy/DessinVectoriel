@@ -3,7 +3,7 @@ package dessin_vectoriel;
 /*
  * Represente une forme geometrique quelconque (carre, rond, triangle, etc)
  */
-public class Forme extends Element implements IForme {
+public abstract class Forme extends Element implements IForme {
 	
 	private boolean remplissage;
 	private Point barycentre;//BM : sert de position a la figure

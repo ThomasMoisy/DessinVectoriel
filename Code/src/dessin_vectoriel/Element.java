@@ -1,7 +1,7 @@
 package dessin_vectoriel;
 
 //BM : peut etre une forme, une droite, un trait courbe etc
-public class Element implements IElement{
+public abstract class Element implements IElement{
 
 	private boolean visibilite;
 	private Couleur couleur;
