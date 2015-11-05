@@ -20,7 +20,7 @@ public class Cercle extends Forme implements IForme{
 	}
 	
 	//BM : peut etre a creer dans Element et dans ce cas a appeler creerCercle
-	public Cercle creer(boolean remplissage, boolean visibilite, Couleur couleur, int epaisseur, Point barycentre, int r){
+	public static Cercle creer(boolean remplissage, boolean visibilite, Couleur couleur, int epaisseur, Point barycentre, int r){
 		return new Cercle(remplissage, visibilite, couleur, epaisseur, barycentre,r);
 	}
 	

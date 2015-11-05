@@ -1,0 +1,24 @@
+Liste des taches restantes :
+
+Micaël : 
+- Boucles à implementer
+- Instruction + Builder remplir
+
+
+Thomas :
+- Methode insérer à ajouter aux instructions
+- Traducteur : structure à mettre en place + entête de chaque methode
+
+
+Baptiste :
+- Fabriques : ajouter des static à des methode creer pour chaque Element de l'image (Cercle, carre, etc)
+- Courbes de Bézier à representer
+- Ajouter classe etiquette
+- Instruction étiqueter
+
+Commune :
+- Traduction SVG : A repartir apres structure 
+
+
+
+

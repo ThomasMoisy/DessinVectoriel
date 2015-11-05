@@ -21,17 +21,17 @@ public class Carre extends Forme implements IForme{
 	}
 	
 	//BM : peut etre a creer dans Element et dans ce cas a appeler creerCarre
-	public Carre creer(boolean remplissage, boolean visibilite, Couleur couleur, int epaisseur, Point barycentre,
+	public static Carre creer(boolean remplissage, boolean visibilite, Couleur couleur, int epaisseur, 
 		Point p1, Point p2, Point p3, Point p4){
 		//BM : calcul du barycentre
 		int xG =(p1.getX()+p2.getX()+p3.getX()+p4.getX())/4;
 		int yG =(p1.getY()+p2.getY()+p3.getY()+p4.getY())/4;
 		Vecteur diagonale = new Vecteur(new Point(xG,yG),p1);
-		return new Carre(remplissage,visibilite,couleur,epaisseur, barycentre,diagonale);
+		return new Carre(remplissage,visibilite,couleur,epaisseur, new Point(xG,yG) ,diagonale);
 	}
 	
 	//BM : peut etre a creer dans Element et dans ce cas a appeler creerCarre
-	public Carre creer(boolean remplissage, boolean visibilite, Couleur couleur,int epaisseur, Point barycentre,
+	public static Carre creer(boolean remplissage, boolean visibilite, Couleur couleur,int epaisseur, Point barycentre,
 			Vecteur diagonale){
 		return new Carre(remplissage,visibilite,couleur, epaisseur, barycentre,diagonale);
 	}
