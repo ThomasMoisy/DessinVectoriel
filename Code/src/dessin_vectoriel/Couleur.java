@@ -15,7 +15,7 @@ public enum Couleur {
 	public static final Integer gris = 8;
 	public static final Integer blanc = 9;
 	*/
-	private String name;
+	
 	
 	
 	public String getName() {
