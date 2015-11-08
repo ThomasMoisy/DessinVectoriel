@@ -3,9 +3,9 @@ package builders;
 import java.util.ArrayList;
 import java.util.List;
 
-import dessin_vectoriel.Cercle;
 import dessin_vectoriel.Couleur;
 import dessin_vectoriel.Element;
+import dessin_vectoriel.Forme;
 import dessin_vectoriel.Point;
 import dessin_vectoriel.Triangle;
 import script.Dessiner;
@@ -15,11 +15,10 @@ import script.Script;
  * TriangleBuilder qui contient des methodes pour construire les  
  * parametres d'une instruction dessiner(triangle)
  */
-public class TriangleBuilder extends ScriptBuilder {
+public class TriangleBuilder extends FormeBuilder {
 	private Point p1;
 	private Point p2;
 	private Point p3;
-	private Couleur couleur;
 	
 	/**
 	 * regle le premier point composant le triangle
@@ -30,7 +29,7 @@ public class TriangleBuilder extends ScriptBuilder {
 	 */
 	public TriangleBuilder point1(Object x, Object y) throws Exception {
 		//this.p1 = new Point(false, couleur, 1, x, y);
-		this.p1 = new PointBuilder(x, y, couleur).execute();
+		this.p1 = new PointBuilder(x, y, super.couleur).execute();
 		return this;
 	}
 	
@@ -77,12 +76,17 @@ public class TriangleBuilder extends ScriptBuilder {
 	 */
 	public Script script() {
 		//cree un triangle avec les bons parametres
-		Triangle triangle = new Triangle(false, true, couleur, 1, p1, p2, p3);
+		Triangle triangle = new Triangle(this.remplissage, true, couleur, 1, p1, p2, p3);
 		List<Element> list = new ArrayList<Element>();
 		//ajoute ce triangle a une liste
 		list.add(triangle);
 		//retourne l'instruction Dessiner
 		return new Dessiner(list, couleur);
+	}
+
+	@Override
+	public Forme getForme() {
+		return new Triangle(false, true, couleur, 1, p1, p2, p3);
 	}
 	
 }

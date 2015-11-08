@@ -6,6 +6,7 @@ import java.util.List;
 import dessin_vectoriel.Cercle;
 import dessin_vectoriel.Couleur;
 import dessin_vectoriel.Element;
+import dessin_vectoriel.Forme;
 import dessin_vectoriel.Point;
 import script.Dessiner;
 import script.Script;
@@ -14,10 +15,9 @@ import script.Script;
  * CercleBuilder qui contient des methodes pour construire les  
  * parametres d'une instruction dessiner(cercle)
  */
-public class CercleBuilder extends ScriptBuilder {
+public class CercleBuilder extends FormeBuilder {
 	private Point centre;
 	private int rayon;
-	private Couleur couleur;
 	
 	public CercleBuilder() {
 	}
@@ -62,11 +62,17 @@ public class CercleBuilder extends ScriptBuilder {
 	 */
 	public Script script() {
 		//cree un cercle avec les bons parametres
-		Cercle cercle = new Cercle(false, true, couleur, 1, centre, rayon);
+		
+		Cercle cercle = new Cercle(remplissage, true, couleur, 1, centre, rayon);
 		//ajoute ce cercle a une liste
 		List<Element> list = new ArrayList<Element>();
 		list.add(cercle);
 		//retourne l'instruction Dessiner
 		return new Dessiner(list, couleur);
+	}
+
+	@Override
+	public Forme getForme() {
+		return new Cercle(remplissage, true, couleur, 1, centre, rayon);
 	}
 }

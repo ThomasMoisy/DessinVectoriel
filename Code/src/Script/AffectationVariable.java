@@ -9,12 +9,13 @@ import dessin_vectoriel.Image;
  */
 public class AffectationVariable extends InstructionTerminale {
 	String identifiant;
-	int valeur;
+	float valeur;
 	
 	public AffectationVariable(String identifiant, int valeur) {
 		super();
 		this.identifiant = identifiant;
 		this.valeur = valeur;
+		Contexte.contexte.bind(identifiant, valeur);
 	}
 		
 	public String getIdentifiant() {
@@ -25,17 +26,12 @@ public class AffectationVariable extends InstructionTerminale {
 		this.identifiant = identifiant;
 	}
 
-	public int getValeur() {
+	public float getValeur() {
 		return valeur;
 	}
 
-	public void setValeur(int valeur) {
+	public void setValeur(float valeur) {
 		this.valeur = valeur;
-	}
-	
-	public AffectationVariable execute() {
-		Contexte.contexte.bind(identifiant, valeur);
-		return this;
 	}
 
 
