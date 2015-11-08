@@ -27,9 +27,11 @@ public class CercleBuilder extends ScriptBuilder {
 	 * @param x abscisse du cercle
 	 * @param y ordonnee du cercle
 	 * @return un CercleBuilder
+	 * @throws Exception 
 	 */
-	public CercleBuilder centre(int x, int y) {
-		this.centre = new Point(false, couleur, 1, x, y);
+	public CercleBuilder centre(int x, int y) throws Exception {
+		//this.centre = new Point(false, couleur, 1, x, y);
+		this.centre = new PointBuilder(x, y, couleur).execute();
 		return this;
 	}
 	

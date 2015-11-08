@@ -26,9 +26,11 @@ public class TriangleBuilder extends ScriptBuilder {
 	 * @param x
 	 * @param y
 	 * @return un TriangleBuilder
+	 * @throws Exception 
 	 */
-	public TriangleBuilder point1(int x, int y) {
-		this.p1 = new Point(false, couleur, 1, x, y);
+	public TriangleBuilder point1(Object x, Object y) throws Exception {
+		//this.p1 = new Point(false, couleur, 1, x, y);
+		this.p1 = new PointBuilder(x, y, couleur).execute();
 		return this;
 	}
 	
@@ -37,9 +39,11 @@ public class TriangleBuilder extends ScriptBuilder {
 	 * @param x
 	 * @param y
 	 * @return un TriangleBuilder
+	 * @throws Exception 
 	 */
-	public TriangleBuilder point2(int x, int y) {
-		this.p2 = new Point(false, couleur, 1, x, y);
+	public TriangleBuilder point2(Object x, Object y) throws Exception {
+		//this.p2 = new Point(false, couleur, 1, x, y);
+		this.p2 = new PointBuilder(x, y, couleur).execute();
 		return this;
 	}
 	
@@ -48,9 +52,11 @@ public class TriangleBuilder extends ScriptBuilder {
 	 * @param x
 	 * @param y
 	 * @return un TriangleBuilder
+	 * @throws Exception 
 	 */
-	public TriangleBuilder point3(int x, int y) {
-		this.p3 = new Point(false, couleur, 1, x, y);
+	public TriangleBuilder point3(Object x, Object y) throws Exception {
+		//this.p3 = new Point(false, couleur, 1, x, y);
+		this.p3 = new PointBuilder(x, y, couleur).execute();
 		return this;
 	}
 	

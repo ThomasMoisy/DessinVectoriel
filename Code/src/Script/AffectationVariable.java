@@ -9,9 +9,9 @@ import dessin_vectoriel.Image;
  */
 public class AffectationVariable extends InstructionTerminale {
 	String identifiant;
-	float valeur;
+	int valeur;
 	
-	public AffectationVariable(String identifiant, float valeur) {
+	public AffectationVariable(String identifiant, int valeur) {
 		super();
 		this.identifiant = identifiant;
 		this.valeur = valeur;
@@ -25,19 +25,23 @@ public class AffectationVariable extends InstructionTerminale {
 		this.identifiant = identifiant;
 	}
 
-	public float getValeur() {
+	public int getValeur() {
 		return valeur;
 	}
 
-	public void setValeur(float valeur) {
+	public void setValeur(int valeur) {
 		this.valeur = valeur;
+	}
+	
+	public AffectationVariable execute() {
+		Contexte.contexte.bind(identifiant, valeur);
+		return this;
 	}
 
 
 	@Override
 	public Image executer(Image image) {
-		// TODO Auto-generated method stub
-		return null;
+		return image;
 	}
 
 }

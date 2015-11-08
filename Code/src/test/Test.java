@@ -6,7 +6,7 @@ import builders.ForBuilder;
 import builders.ListePointsBuilder;
 import builders.SequenceBuilder;
 import dessin_vectoriel.Image;
-import script.For;
+import script.AffectationVariable;
 import script.Script;
 
 
@@ -39,6 +39,15 @@ public class Test {
 								.point2(1,1)
 								.point3(2,0)
 								.couleur(6))
+						.script())
+				.add(new AffectationVariable("x", 1).execute())
+				.add(new AffectationVariable("y", 2).execute())
+				.add(new DessinerBuilder()
+						.triangle()
+						.point1(0,"x")
+						.point2("y", "y")
+						.point3(1, 3)
+						.couleur(7)
 						.script())
 				.script();
 			//Exécution du script qui va créer un objet de type Image qui sera notre dessin vectoriel
