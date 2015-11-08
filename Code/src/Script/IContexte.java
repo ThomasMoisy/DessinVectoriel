@@ -1,6 +1,6 @@
 package script;
 
-public interface IContexte<E> {
-	public void bind(String identifiant, E valeur);
-	public E lookup(String identifiant) throws Exception;
+public interface IContexte {
+	public void bind(String identifiant, int valeur);
+	public int lookup(String identifiant) throws Exception;
 }

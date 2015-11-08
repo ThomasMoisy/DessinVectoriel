@@ -8,22 +8,16 @@ import dessin_vectoriel.Image;
  */
 public class For extends Script{
 	private Sequence sequence;
-	private String variable;
-	private int n;
 
-	public For(Sequence sequence, String variable, int n) {
+	public For(Sequence sequence) {
 		super();
 		this.sequence = sequence;
-		this.variable = variable;
-		this.n = n;
 	}
 
 
 	@Override
 	public Image executer(Image image) {
-		for (int j = 0; j < n; j++) {
-			image = sequence.executer(image);
-		}
+		image = sequence.executer(image);
 		return image;
 	}
 

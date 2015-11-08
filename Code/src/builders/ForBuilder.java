@@ -1,5 +1,9 @@
 package builders;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import script.Contexte;
 import script.For;
 import script.Script;
 import script.Sequence;
@@ -13,6 +17,7 @@ public class ForBuilder extends ScriptBuilder {
 	private int n = 0; 
 	private String variable;
 	private Sequence sequence = new Sequence();
+	private List<ScriptBuilder> builders = new ArrayList<ScriptBuilder>();
 
 	/**
 	 * regle le nombre d'iterations de la boucle
@@ -39,8 +44,15 @@ public class ForBuilder extends ScriptBuilder {
 	 * @param script 
 	 * @return un ForBuilder
 	 */
-	public ForBuilder add(Script script) {
-		sequence.add(script);
+	/*public ForBuilder add(Script script) {
+		for (int i = 0; i < n; i++) {
+			Contexte.contexte.bind(this.variable, i);
+			sequence.add(script);
+		}
+		return this;
+	}*/
+	public ForBuilder add(ScriptBuilder builder) {
+		builders.add(builder);
 		return this;
 	}
 
@@ -48,9 +60,17 @@ public class ForBuilder extends ScriptBuilder {
 	 * genere un Script a partir du builder
 	 * une fois que tous les parametres ont ete regles
 	 * @return
+	 * @throws Exception 
 	 */
-	public Script script() {
-		return new For(sequence, variable, n);
+	public Script script() throws Exception {
+		for (int i = 0; i <n; i++) {
+			Contexte.contexte.bind(variable, i);
+			for (ScriptBuilder builder : builders) {
+				Script s = builder.script();
+				sequence.add(s);
+			}
+		}
+		return new For(sequence);
 	}
 
 }

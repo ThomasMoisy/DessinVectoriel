@@ -40,5 +40,9 @@ public class Sequence extends Script{
 		}
 		return image;
 	}
+
+	public int size() {
+		return scripts.size();
+	}
 	
 }

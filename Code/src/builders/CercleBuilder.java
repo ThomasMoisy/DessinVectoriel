@@ -29,7 +29,7 @@ public class CercleBuilder extends ScriptBuilder {
 	 * @return un CercleBuilder
 	 */
 	public CercleBuilder centre(int x, int y) {
-		this.centre = new Point(x, y);
+		this.centre = new Point(false, couleur, 1, x, y);
 		return this;
 	}
 	

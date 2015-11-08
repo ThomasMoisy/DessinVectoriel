@@ -28,7 +28,7 @@ public class TriangleBuilder extends ScriptBuilder {
 	 * @return un TriangleBuilder
 	 */
 	public TriangleBuilder point1(int x, int y) {
-		this.p1 = new Point(x, y);
+		this.p1 = new Point(false, couleur, 1, x, y);
 		return this;
 	}
 	
@@ -39,7 +39,7 @@ public class TriangleBuilder extends ScriptBuilder {
 	 * @return un TriangleBuilder
 	 */
 	public TriangleBuilder point2(int x, int y) {
-		this.p2 = new Point(x, y);
+		this.p2 = new Point(false, couleur, 1, x, y);
 		return this;
 	}
 	
@@ -50,7 +50,7 @@ public class TriangleBuilder extends ScriptBuilder {
 	 * @return un TriangleBuilder
 	 */
 	public TriangleBuilder point3(int x, int y) {
-		this.p3 = new Point(x, y);
+		this.p3 = new Point(false, couleur, 1, x, y);
 		return this;
 	}
 	

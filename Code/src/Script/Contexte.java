@@ -10,19 +10,20 @@ import java.util.HashMap;
  */
 
 @SuppressWarnings("serial")
-public class Contexte<E> extends HashMap<String, E> implements IContexte<E>{
-	public static Contexte<Object> contexte = new Contexte<Object>();
+public class Contexte extends HashMap<String, Integer> implements IContexte{
+	public static Contexte contexte = new Contexte();
 	
 	private Contexte() {
 	}
 	
 	@Override
-	public E lookup(String identifiant) throws Exception {
-		return lookup(identifiant);
+	public int lookup(String identifiant) throws Exception {
+		return this.get(identifiant);
 	}
+	
 	@Override
-	public void bind(String identifiant, E valeur) {
-		put(identifiant, valeur);
+	public void bind(String identifiant, int valeur) {
+		this.put(identifiant, valeur);
 	}
 	
 }

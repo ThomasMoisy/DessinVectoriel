@@ -35,7 +35,9 @@ public class Dessiner extends InstructionTerminale{
 		return image;
 	}
 
-
+	public String toString() {
+		return elements.toString();
+	}
 	
 	
 

@@ -17,11 +17,11 @@ import script.Script;
  * ex dessiner((0,0)--(1,0))
  *
  */
-public class PointsBuilder extends ScriptBuilder {
-	private List<Point> points = new ArrayList<Point>();
+public class ListePointsBuilder extends ScriptBuilder {
+	private List<PointBuilder> points = new ArrayList<PointBuilder>();
 	private Couleur couleur;
 	
-	public PointsBuilder() {
+	public ListePointsBuilder() {
 	}
 	
 	/**
@@ -30,8 +30,8 @@ public class PointsBuilder extends ScriptBuilder {
 	 * @param y
 	 * @return un PointsBuilder
 	 */
-	public PointsBuilder point(int x, int y) {
-		points.add(new Point(x, y));
+	public ListePointsBuilder point(Object x, Object y) {
+		points.add(new PointBuilder(x, y, couleur));
 		return this;
 	}
 	
@@ -40,21 +40,25 @@ public class PointsBuilder extends ScriptBuilder {
 	 * @param couleur
 	 * @return un PointsBuilder
 	 */
-	public PointsBuilder couleur(int couleur) {
+	public ListePointsBuilder couleur(int couleur) {
 		this.couleur = new Couleur(couleur);
 		return this;
 	}
+	
 	
 	/**
 	 * genere un Script a partir du builder
 	 * une fois que tous les parametres ont ete regles
 	 * @return
+	 * @throws Exception 
 	 */
-	public Script script() {
+	public Script script() throws Exception {
 		List<Element> list = new ArrayList<Element>();
 		//cree de droites a reliant les points i et i+1
 		for (int i = 0; i < points.size()-1; i++) {
-			Vecteur v = new Vecteur(points.get(i), points.get(i+1));
+			Point p = points.get(i).execute();
+			Point pp = points.get(i+1).execute();
+			Vecteur v = new Vecteur(p, pp);
 			Droite d = new Droite(true, couleur, 1, v);
 			//ajoute les droites a une liste
 			list.add(d);
