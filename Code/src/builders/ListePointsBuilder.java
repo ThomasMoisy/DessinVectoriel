@@ -40,8 +40,8 @@ public class ListePointsBuilder extends ScriptBuilder {
 	 * @param couleur
 	 * @return un PointsBuilder
 	 */
-	public ListePointsBuilder couleur(int couleur) {
-		this.couleur = new Couleur(couleur);
+	public ListePointsBuilder couleur(Couleur couleur) {
+		this.couleur = couleur;
 		return this;
 	}
 	

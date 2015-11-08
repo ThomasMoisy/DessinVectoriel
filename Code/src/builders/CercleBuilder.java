@@ -50,8 +50,8 @@ public class CercleBuilder extends FormeBuilder {
 	 * @param couleur, la couleur du cercle
 	 * @return un CercleBuilder
 	 */
-	public CercleBuilder couleur (int couleur) {
-		this.couleur = new Couleur(couleur);
+	public CercleBuilder couleur (Couleur couleur) {
+		this.couleur = couleur;
 		return this;
 	}
 

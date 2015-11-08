@@ -64,8 +64,8 @@ public class TriangleBuilder extends FormeBuilder {
 	 * @param couleur, la couleur du triangle
 	 * @return un TriangleBuilder
 	 */
-	public TriangleBuilder couleur (int couleur) {
-		this.couleur = new Couleur(couleur);
+	public TriangleBuilder couleur (Couleur couleur) {
+		this.couleur = couleur;
 		return this;
 	}
 

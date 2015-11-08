@@ -8,6 +8,7 @@ import builders.ListePointsBuilder;
 import builders.RemplirBuilder;
 import builders.SequenceBuilder;
 import dessin_vectoriel.Cercle;
+import dessin_vectoriel.Couleur;
 import dessin_vectoriel.Image;
 import script.AffectationVariable;
 import script.Script;
@@ -22,13 +23,13 @@ public class Test {
 						.cercle()
 						.centre(0, 0)
 						.rayon(2)
-						.couleur(9)
+						.couleur(Couleur.ROUGE)
 						.script())
 				.add(new ListePointsBuilder()
 						.point(0,0)
 						.point(3,7)
 						.point(2,1)
-						.couleur(2)
+						.couleur(Couleur.BLEU)
 						.script())
 				.add(new ForBuilder()
 						.to(2)
@@ -41,7 +42,7 @@ public class Test {
 								.point1(0,0)
 								.point2(1,1)
 								.point3(2,0)
-								.couleur(6))
+								.couleur(Couleur.ROSE))
 						.script())
 				.add(new AffectationVariable("x", 1))
 				.add(new AffectationVariable("y", 2))
@@ -50,17 +51,17 @@ public class Test {
 						.point1(0,"x")
 						.point2("y", "y")
 						.point3(1, 3)
-						.couleur(7)
+						.couleur(Couleur.BLANC)
 						.script())
 				.add(new AffectationFormeBuilder("f", new DessinerBuilder()
 												.cercle()
 												.centre(3, 5)
 												.rayon(6)
-												.couleur(1))
+												.couleur(Couleur.NOIR))
 						.script())
 				.add(new RemplirBuilder()
 						.selectionne("f")
-						.couleur(7)
+						.couleur(Couleur.VERT)
 						.script())
 				.script();
 			

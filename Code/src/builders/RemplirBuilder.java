@@ -12,9 +12,9 @@ public class RemplirBuilder extends ScriptBuilder {
 		return this;
 	}
 	
-	public RemplirBuilder couleur(int couleur) {
+	public RemplirBuilder couleur(Couleur couleur) {
 		builder.setRemplissage(true);
-		builder.setCouleur(new Couleur(couleur));
+		builder.setCouleur(couleur);
 		return this;
 	}
 	
