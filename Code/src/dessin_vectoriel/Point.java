@@ -1,12 +1,13 @@
 package dessin_vectoriel;
 
-public class Point {
+public class Point extends Element {
 
 	private int X;
 	private int Y;
 	
-	public Point(int x, int y) {
-		super();
+	
+	public Point(boolean visibilite, Couleur couleur, int epaisseur, int x, int y) {
+		super(visibilite, couleur, epaisseur);
 		X = x;
 		Y = y;
 	}
@@ -35,5 +36,13 @@ public class Point {
 		else{
 			return (this.getX()==((Point)o).getX())&&(this.getY()==((Point)o).getY());
 		}
+	}
+	//BM : par default construction d'un point non visible qui sert juste de base de construction aux autres formes
+	public static Point creer(int x, int y){
+		return new Point(false,null, 0,  x,  y);
+	}
+	
+	public static Point creer(boolean visibilite, Couleur couleur, int epaisseur, int x, int y){
+		return new Point(visibilite,couleur, epaisseur,  x,  y);
 	}
 }

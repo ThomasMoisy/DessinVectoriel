@@ -26,8 +26,9 @@ public class Carre extends Forme implements IForme{
 		//BM : calcul du barycentre
 		int xG =(p1.getX()+p2.getX()+p3.getX()+p4.getX())/4;
 		int yG =(p1.getY()+p2.getY()+p3.getY()+p4.getY())/4;
-		Vecteur diagonale = new Vecteur(new Point(xG,yG),p1);
-		return new Carre(remplissage,visibilite,couleur,epaisseur, new Point(xG,yG) ,diagonale);
+		Point G = Point.creer(xG, yG);
+		Vecteur diagonale = new Vecteur(G,p1);
+		return new Carre(remplissage,visibilite,couleur,epaisseur, G ,diagonale);
 	}
 	
 	//BM : peut etre a creer dans Element et dans ce cas a appeler creerCarre
@@ -35,4 +36,6 @@ public class Carre extends Forme implements IForme{
 			Vecteur diagonale){
 		return new Carre(remplissage,visibilite,couleur, epaisseur, barycentre,diagonale);
 	}
+	
+	
 }

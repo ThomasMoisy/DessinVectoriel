@@ -31,7 +31,7 @@ public class Chemin extends Element implements IElement {
 	}
 	
 	//BM : peut etre a creer dans Element et dans ce cas a appeler creerChemin
-	public Chemin creer(boolean visibilite, Couleur couleur, int epaisseur, List<Vecteur> vecteurs){
+	public static Chemin creer(boolean visibilite, Couleur couleur, int epaisseur, List<Vecteur> vecteurs){
 		return new Chemin(visibilite, couleur, epaisseur, vecteurs);
 	}
 

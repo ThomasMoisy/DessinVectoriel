@@ -1,6 +1,6 @@
 package dessin_vectoriel;
 
-public class Vecteur {
+public class Vecteur  {
 	
 	private Point origine;
 	private Point image;
