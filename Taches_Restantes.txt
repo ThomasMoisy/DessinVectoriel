@@ -1,5 +1,7 @@
 Liste des taches restantes :
 
+En attente de confirmation prochain rendez vous lundi 16  a 16h30
+
 Thomas :
 - Methode insérer à ajouter aux instructions
 - Traducteur : structure à mettre en place + entête de chaque methode
