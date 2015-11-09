@@ -7,6 +7,7 @@ import script.Script;
 public class EtiqueterBuilder extends ScriptBuilder {
 	
 	private FormeBuilder forme;
+	private EtiquetteBuilder etiquette;
 	
 	public EtiqueterBuilder() {
 		// TODO Auto-generated constructor stub
