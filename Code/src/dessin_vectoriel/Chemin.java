@@ -2,6 +2,7 @@ package dessin_vectoriel;
 
 import java.util.List;
 
+//Cette classe sera peut etre supprimer 
 public class Chemin extends Element implements IElement {
 	
 	//BM : Un chemin trace de facon quelconque peut possiblement etre representer par une liste de vecteurs avec la contrainte qu un point image est l origine du vecteur suivant

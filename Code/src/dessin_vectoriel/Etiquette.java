@@ -1,7 +1,7 @@
 package dessin_vectoriel;
 
 
-//Eventuellement besoin de rajouter une taille
+//Eventuellement besoin de rajouter une taille et une position
 public class Etiquette extends Element {
 	
 	private String texte;
