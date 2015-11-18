@@ -2,6 +2,8 @@ package dessin_vectoriel;
 
 import java.util.List;
 
+import traducteurs.Traducteur;
+
 //Cette classe sera peut etre supprimer 
 public class Chemin extends Element implements IElement {
 	
@@ -34,6 +36,12 @@ public class Chemin extends Element implements IElement {
 	//BM : peut etre a creer dans Element et dans ce cas a appeler creerChemin
 	public static Chemin creer(boolean visibilite, Couleur couleur, int epaisseur, List<Vecteur> vecteurs){
 		return new Chemin(visibilite, couleur, epaisseur, vecteurs);
+	}
+	
+	@Override
+	public void traduire(Traducteur traducteur) {
+		// TODO Auto-generated method stub
+		traducteur.traduire(this);
 	}
 
 }

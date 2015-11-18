@@ -1,5 +1,7 @@
 package dessin_vectoriel;
 
+import traducteurs.Traducteur;
+
 public class Carre extends Forme implements IForme{
 	
 	//BM : Une maniere de representer un carre a partir de son centre en prenant un vecteur d'une diagonal, les autres se trouvent ensuite facilement
@@ -37,5 +39,10 @@ public class Carre extends Forme implements IForme{
 		return new Carre(remplissage,visibilite,couleur, epaisseur, barycentre,diagonale);
 	}
 	
+	@Override
+	public void traduire(Traducteur traducteur) {
+		// TODO Auto-generated method stub
+		traducteur.traduire(this);
+	}
 	
 }

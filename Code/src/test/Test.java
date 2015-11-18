@@ -3,6 +3,7 @@ package test;
 
 import builders.AffectationFormeBuilder;
 import builders.DessinerBuilder;
+import builders.EtiqueterBuilder;
 import builders.ForBuilder;
 import builders.ListePointsBuilder;
 import builders.RemplirBuilder;
@@ -10,8 +11,10 @@ import builders.SequenceBuilder;
 import dessin_vectoriel.Cercle;
 import dessin_vectoriel.Couleur;
 import dessin_vectoriel.Image;
+import dessin_vectoriel.Orientation;
 import script.AffectationVariable;
 import script.Script;
+
 
 
 public class Test {
@@ -63,9 +66,14 @@ public class Test {
 						.selectionne("f")
 						.couleur(Couleur.VERT)
 						.script())
-				.script();
-			
-			
+				
+			.add(new EtiqueterBuilder()
+					.etiqueter("f")
+					.couleur(Couleur.VERT)
+					.epaisseur(10)
+					.orientation(Orientation.NORTH)
+					.script())
+			.script();
 			//Exécution du script qui va créer un objet de type Image qui sera notre dessin vectoriel
 			Image image = script.executer(new Image());
 			System.out.println(image.getElements());

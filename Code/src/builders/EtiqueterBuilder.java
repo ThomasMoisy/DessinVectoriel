@@ -8,6 +8,7 @@ import dessin_vectoriel.Couleur;
 import dessin_vectoriel.Element;
 import dessin_vectoriel.Etiquette;
 import dessin_vectoriel.Orientation;
+import script.ContexteElement;
 import script.Dessiner;
 import script.Etiqueter;
 import script.Script;
@@ -15,7 +16,7 @@ import script.Script;
 public class EtiqueterBuilder extends ScriptBuilder{
 
 	private String texte;
-	private Element associe;
+	private ElementBuilder associe;
 	private Couleur couleur;
 	private Orientation orientation;
 	private int epaisseur;
@@ -55,7 +56,7 @@ public class EtiqueterBuilder extends ScriptBuilder{
 	public Script script() throws Exception {
 		// TODO Auto-generated method stub
 		Etiquette etiquette = Etiquette.creer(true, couleur, epaisseur, texte, null, orientation);
-		return new Etiqueter(associe, etiquette);
+		return new Etiqueter(associe.getElement(), etiquette);
 	}
 	
 	

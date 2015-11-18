@@ -1,5 +1,7 @@
 package dessin_vectoriel;
 
+import traducteurs.Traducteur;
+
 public class Droite extends Element implements IElement{
 	
 	private Vecteur vecteur;
@@ -37,5 +39,10 @@ public class Droite extends Element implements IElement{
 		return new Droite(visibilite, couleur, epaisseur, new Vecteur(Point.creer(x1,y1),Point.creer(x2,y2)));
 	}
 	
+	@Override
+	public void traduire(Traducteur traducteur) {
+		// TODO Auto-generated method stub
+		traducteur.traduire(this);
+	}
 	
 }

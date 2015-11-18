@@ -1,14 +1,14 @@
 package builders;
 
 import dessin_vectoriel.Couleur;
-import script.ContexteForme;
+import script.ContexteElement;
 import script.Script;
 
 public class RemplirBuilder extends ScriptBuilder {
 	FormeBuilder builder;
 
 	public RemplirBuilder selectionne(String identifiant) throws Exception {
-		builder = ContexteForme.contexte.lookup(identifiant);
+		builder = (FormeBuilder) ContexteElement.contexte.lookup(identifiant);
 		return this;
 	}
 	

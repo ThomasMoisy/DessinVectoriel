@@ -1,7 +1,7 @@
 package builders;
 
 import script.AffectationForme;
-import script.ContexteForme;
+import script.ContexteElement;
 import script.Script;
 
 public class AffectationFormeBuilder extends ScriptBuilder{
@@ -16,7 +16,7 @@ public class AffectationFormeBuilder extends ScriptBuilder{
 	
 	@Override
 	public Script script() throws Exception {
-		ContexteForme.contexte.bind(identifiant, builder);
+		ContexteElement.contexte.bind(identifiant, builder);
 		return new AffectationForme(identifiant, builder);
 	}
 

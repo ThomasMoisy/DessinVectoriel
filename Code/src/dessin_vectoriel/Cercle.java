@@ -1,5 +1,7 @@
 package dessin_vectoriel;
 
+import traducteurs.Traducteur;
+
 public class Cercle extends Forme implements IForme{
 
 	
@@ -24,6 +26,11 @@ public class Cercle extends Forme implements IForme{
 		return new Cercle(remplissage, visibilite, couleur, epaisseur, barycentre,r);
 	}
 	
+	@Override
+	public void traduire(Traducteur traducteur) {
+		// TODO Auto-generated method stub
+		traducteur.traduire(this);
+	}
 	public String toString() {
 		return "Cercle("+this.getBarycentre()+", "+R+")";
 	}

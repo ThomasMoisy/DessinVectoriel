@@ -1,5 +1,7 @@
 package dessin_vectoriel;
 
+import traducteurs.Traducteur;
+
 public class Triangle extends Forme implements IForme {
 	private Point p1;
 	private Point p2;
@@ -14,5 +16,11 @@ public class Triangle extends Forme implements IForme {
 	
 	public String toString() {
 		return "Triangle(" + p1 + ", " + p2 + ", " + p3 + ")";
+	}
+	
+	@Override
+	public void traduire(Traducteur traducteur) {
+		// TODO Auto-generated method stub
+		traducteur.traduire(this);
 	}
 }

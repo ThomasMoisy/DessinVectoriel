@@ -3,9 +3,8 @@ package builders;
 import dessin_vectoriel.Couleur;
 import dessin_vectoriel.Forme;
 
-public abstract class FormeBuilder extends ScriptBuilder{
+public abstract class FormeBuilder extends ElementBuilder{
 	boolean remplissage = false;
-	Couleur couleur;
 	
 	abstract public Forme getForme();
 	
@@ -13,7 +12,4 @@ public abstract class FormeBuilder extends ScriptBuilder{
 		this.remplissage = remplissage;
 	}
 	
-	public void setCouleur(Couleur couleur) {
-		this.couleur = couleur;
-	}
 }

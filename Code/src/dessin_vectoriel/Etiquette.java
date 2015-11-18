@@ -1,5 +1,6 @@
 package dessin_vectoriel;
 
+import traducteurs.Traducteur;
 
 //Eventuellement besoin de rajouter une taille et une position
 public class Etiquette extends Element {
@@ -45,5 +46,10 @@ public class Etiquette extends Element {
 		return new Etiquette(visibilite, couleur, epaisseur, texte, associe, orientation);
 	}
 	
+	@Override
+	public void traduire(Traducteur traducteur) {
+		// TODO Auto-generated method stub
+		traducteur.traduire(this);
+	}
 
 }

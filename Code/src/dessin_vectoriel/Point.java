@@ -1,5 +1,7 @@
 package dessin_vectoriel;
 
+import traducteurs.Traducteur;
+
 public class Point extends Element {
 
 	private int X;
@@ -44,5 +46,11 @@ public class Point extends Element {
 	
 	public static Point creer(boolean visibilite, Couleur couleur, int epaisseur, int x, int y){
 		return new Point(visibilite,couleur, epaisseur,  x,  y);
+	}
+	
+	@Override
+	public void traduire(Traducteur traducteur) {
+		// TODO Auto-generated method stub
+		traducteur.traduire(this);
 	}
 }
