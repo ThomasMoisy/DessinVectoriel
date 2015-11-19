@@ -27,15 +27,15 @@ public class Test {
 			script = new SequenceBuilder()
 				.add(new DessinerBuilder()
 						.cercle()
-						.centre(0, 0)
-						.rayon(2)
-						.couleur(Couleur.ROUGE)
+						.centre(105, 45)
+						.rayon(30)
+						.couleur(Couleur.RED)
 						.script())
 				.add(new ListePointsBuilder()
 						.point(0,0)
 						.point(3,7)
 						.point(2,1)
-						.couleur(Couleur.BLEU)
+						.couleur(Couleur.BLUE)
 						.script())
 				.add(new ForBuilder()
 						.to(2)
@@ -48,7 +48,7 @@ public class Test {
 								.point1(0,0)
 								.point2(1,1)
 								.point3(2,0)
-								.couleur(Couleur.ROSE))
+								.couleur(Couleur.PINK))
 						.script())
 				.add(new AffectationVariable("x", 1))
 				.add(new AffectationVariable("y", 2))
@@ -57,17 +57,17 @@ public class Test {
 						.point1(0,"x")
 						.point2("y", "y")
 						.point3(1, 3)
-						.couleur(Couleur.BLANC)
+						.couleur(Couleur.WHITE)
 						.script())
 				.add(new AffectationFormeBuilder("f", new DessinerBuilder()
 												.cercle()
 												.centre(3, 5)
 												.rayon(6)
-												.couleur(Couleur.NOIR))
+												.couleur(Couleur.BLACK))
 						.script())
 				.add(new RemplirBuilder()
 						.selectionne("f")
-						.couleur(Couleur.VERT)
+						.couleur(Couleur.GREEN)
 						.script())
 				
 			/*.add(new EtiqueterBuilder()
@@ -84,7 +84,7 @@ public class Test {
 			
 			//Traduction SVG
 			TraducteurSVG traducteurSVG = new TraducteurSVG();
-			//traducteurSVG.traduire(image);
+			traducteurSVG.traduire(image);
 			traducteurSVG.save();
 			
 		} catch (Exception e) {
