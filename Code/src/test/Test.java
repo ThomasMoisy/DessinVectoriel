@@ -1,6 +1,7 @@
 package test;
 
 
+
 import builders.AffectationFormeBuilder;
 import builders.DessinerBuilder;
 import builders.EtiqueterBuilder;
@@ -14,6 +15,8 @@ import dessin_vectoriel.Image;
 import dessin_vectoriel.Orientation;
 import script.AffectationVariable;
 import script.Script;
+import traducteurs.Traducteur;
+import traducteurs.TraducteurSVG;
 
 
 
@@ -67,16 +70,23 @@ public class Test {
 						.couleur(Couleur.VERT)
 						.script())
 				
-			.add(new EtiqueterBuilder()
+			/*.add(new EtiqueterBuilder()
 					.etiqueter("f")
 					.couleur(Couleur.VERT)
 					.epaisseur(10)
 					.orientation(Orientation.NORTH)
-					.script())
+					.script())*/
 			.script();
+			
 			//Exécution du script qui va créer un objet de type Image qui sera notre dessin vectoriel
 			Image image = script.executer(new Image());
 			System.out.println(image.getElements());
+			
+			//Traduction SVG
+			TraducteurSVG traducteurSVG = new TraducteurSVG();
+			//traducteurSVG.traduire(image);
+			traducteurSVG.save();
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
