@@ -31,7 +31,7 @@ import dessin_vectoriel.Triangle;
 public class TraducteurSVG implements Traducteur{
 
 	private Document doc;
-	
+	private Element svg;
 	
 	
 	public TraducteurSVG() throws ParserConfigurationException {
@@ -44,7 +44,7 @@ public class TraducteurSVG implements Traducteur{
 	}
 
 	public void initialize(Document doc) {
-		Element svg = doc.createElement("svg");
+		this.svg = doc.createElement("svg");
 		Attr xmlns = doc.createAttribute("xmlns");
 		xmlns.setValue("http://www.w3.org/2000/svg");
 		Attr version = doc.createAttribute("version");
@@ -81,13 +81,26 @@ public class TraducteurSVG implements Traducteur{
 
 	@Override
 	public void traduire(Carre carre) {
-		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
 	public void traduire(Cercle cercle) {
-		// TODO Auto-generated method stub
+		Element circle = doc.createElement("circle");
+		Attr cx = doc.createAttribute("cx");
+		cx.setValue(cercle.getBarycentre().getX() + "");
+		Attr cy = doc.createAttribute("cy");
+		cy.setValue(cercle.getBarycentre().getY() + "");
+		Attr r = doc.createAttribute("r");
+		r.setValue(cercle.getR() + "");
+		Attr fill = doc.createAttribute("fill");
+		fill.setValue(cercle.getCouleur().getName());
+		circle.setAttributeNode(cx);
+		circle.setAttributeNode(cy);
+		circle.setAttributeNode(r);
+		circle.setAttributeNode(fill);
+		svg.appendChild(circle);
+		//<circle cx="90" cy="80" r="50" fill="blue" />
 	}
 
 	@Override
