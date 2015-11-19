@@ -2,7 +2,7 @@ package dessin_vectoriel;
 
 public enum Couleur {
 	
-	BLEU, VERT, ROUGE, JAUNE, ROSE, ORANGE, NOIR, GRIS, BLANC ;
+	BLUE, GREEN, RED, YELLOW, PINK, ORANGE, BLACK, GREY, WHITE ;
 	
 	/*
 	public static final Integer bleu = 1;
@@ -19,28 +19,7 @@ public enum Couleur {
 	
 	
 	public String getName() {
-		switch (this) {
-		case  BLEU:
-			return "bleu";
-		case VERT:
-			return "bleu";
-		case ROUGE:
-			return "bleu";
-		case JAUNE:
-			return "bleu";
-		case ROSE:
-			return "bleu";
-		case ORANGE:
-			return "bleu";
-		case NOIR:
-			return "bleu";
-		case GRIS:
-			return "bleu";
-		case BLANC:
-			return "bleu";
-		default:
-			return null;
-		}
+		return this.name().toLowerCase();
 	}
 
 }
