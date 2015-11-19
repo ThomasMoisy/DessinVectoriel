@@ -129,8 +129,18 @@ public class TraducteurSVG implements Traducteur{
 
 	@Override
 	public void traduire(Triangle triangle) {
-		// TODO Auto-generated method stub
-		
+		//<polygon points="220,10 300,210 170,250 123,234" style="fill:lime;stroke:purple;stroke-width:1" />
+		Element polygon = doc.createElement("polygon");
+		Attr points = doc.createAttribute("points");
+		String string = triangle.getP1().getX() + "," +  triangle.getP1().getY();
+		string += " " + triangle.getP2().getX() + "," +  triangle.getP2().getY();
+		string += " " + triangle.getP3().getX() + "," +  triangle.getP3().getY();
+		points.setValue(string);
+		Attr style = doc.createAttribute("style");
+		style.setValue("fill:"+triangle.getCouleur().getName());
+		polygon.setAttributeNode(style);
+		polygon.setAttributeNode(points);
+		svg.appendChild(polygon);
 	}
 
 	public void save() {
