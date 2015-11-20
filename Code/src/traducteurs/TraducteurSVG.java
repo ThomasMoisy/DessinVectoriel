@@ -2,6 +2,7 @@ package traducteurs;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -75,13 +76,59 @@ public class TraducteurSVG implements Traducteur{
 	
 
 	@Override
+	/*
+	 * TM : 
+	 * Les courbes de Bezier en svg sont de deux types :
+	 * 1. 	Courbes a quatre points A B C D qui s'écrivent ainsi :
+	 *  		<path d="M10 10 C 20 20, 40 20, 50 10" fill="transparent"/>
+	 *  	ou M precede le point de depart, et C indique que c'est une courbe cubique de Bezier.
+	 * 2.	Courbes a plus de points, qui s'ecrivent ainsi :
+	 * 			<path d="M10 80 C 40 10, 65 10, 95 80 S 150 150, 180 80" fill="transparent"/>
+	 * 		ou on ajoute S et les points supplementaires 
+	 * Attention: Ne prend pour l'instant en compte que les courbes de Bezier de quatre ou six points
+	 */
 	public void traduire(Bezier bezier) {
-		// TODO Auto-generated method stub
+		Element path = doc.createElement("path");
+		List<Point> points = bezier.getPoints();
+		Attr d = doc.createAttribute("d");
+		
+		String string = "M";
+		int counter = 0;
+		Iterator<Point> itrPts = points.iterator();
+		while (itrPts.hasNext()) {
+			Point pt = itrPts.next();
+			string += pt.getX() + " " + pt.getY()+ " ";
+			if (counter == 0) 						string += "C ";
+			else if (counter == 1 || counter == 2)	string += ", ";
+			else if (counter == 3)					string += "S ";
+			else if (counter == 4)					string += ", ";
+			counter++;
+		}
+		
+		d.setValue(string);
+		Attr style = doc.createAttribute("style");
+		style.setValue("fill:"+bezier.getCouleur().getName());
+		path.setAttributeNode(d);
+		path.setAttributeNode(style);
+		svg.appendChild(path);
 	}
 
 	@Override
 	public void traduire(Carre carre) {
+		//<rect width="300" height="100" style="fill="blue" />
+		int cote = (int) (carre.getDiagonale().norme()/Math.sqrt(2));
 		
+		Element rect = doc.createElement("rect");
+		Attr width = doc.createAttribute("width");
+		width.setValue(cote + "");
+		Attr height = doc.createAttribute("height");
+		height.setValue(cote + "");
+		Attr style = doc.createAttribute("style");
+		style.setValue("fill:"+carre.getCouleur().getName());
+		rect.setAttributeNode(width);
+		rect.setAttributeNode(height);
+		rect.setAttributeNode(style);
+		svg.appendChild(rect);
 	}
 
 	@Override
@@ -111,8 +158,23 @@ public class TraducteurSVG implements Traducteur{
 
 	@Override
 	public void traduire(Droite droite) {
-		// TODO Auto-generated method stub
+		// <line x1="0" y1="0" x2="200" y2="200" />
 		
+		Element line = doc.createElement("line");
+		Attr x1 = doc.createAttribute("x1");
+		x1.setValue(droite.getVecteur().getImage().getX()+ "");
+		Attr y1 = doc.createAttribute("y1");
+		y1.setValue(droite.getVecteur().getImage().getY()+ "");
+		Attr x2 = doc.createAttribute("x2");
+		x2.setValue(droite.getVecteur().getImage().getX()+ "");
+		Attr y2 = doc.createAttribute("y2");
+		y2.setValue(droite.getVecteur().getImage().getY()+ "");
+		
+		line.setAttributeNode(x1);
+		line.setAttributeNode(y1);
+		line.setAttributeNode(x2);
+		line.setAttributeNode(y1);
+		svg.appendChild(line);
 	}
 
 	@Override
