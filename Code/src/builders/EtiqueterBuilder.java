@@ -13,7 +13,7 @@ import script.Dessiner;
 import script.Etiqueter;
 import script.Script;
 
-public class EtiqueterBuilder extends ScriptBuilder{
+public class EtiqueterBuilder extends ScriptBuilder {
 
 	private String texte;
 	private ElementBuilder associe;
@@ -55,8 +55,7 @@ public class EtiqueterBuilder extends ScriptBuilder{
 	@Override
 	public Script script() throws Exception {
 		// TODO Auto-generated method stub
-		Etiquette etiquette = Etiquette.creer(true, couleur, epaisseur, texte, null, orientation);
-		return new Etiqueter(associe.getElement(), etiquette);
+		return new Etiqueter(associe.getElement(), couleur, epaisseur, texte, orientation);
 	}
 	
 	

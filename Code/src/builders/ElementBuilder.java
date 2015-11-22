@@ -1,6 +1,7 @@
 package builders;
 
 import dessin_vectoriel.Couleur;
+import dessin_vectoriel.Element;
 import script.Script;
 
 public abstract class ElementBuilder extends ScriptBuilder{
@@ -20,6 +21,8 @@ public abstract class ElementBuilder extends ScriptBuilder{
 	public void setVisibilite(boolean visibilite) {
 		this.visibilite = visibilite;
 	}
+	
+	public abstract Element getElement();
 	
 	
 }

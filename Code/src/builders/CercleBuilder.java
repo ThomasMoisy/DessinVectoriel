@@ -94,7 +94,7 @@ public class CercleBuilder extends FormeBuilder {
 	}
 
 	@Override
-	public Forme getForme() {
+	public Element getElement() {
 		return new Cercle(remplissage, true, couleur, epaisseur, centre, rayon);
 	}
 }

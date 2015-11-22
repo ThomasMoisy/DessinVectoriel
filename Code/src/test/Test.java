@@ -69,6 +69,7 @@ public class Test {
 						.selectionne("f")
 						.couleur(Couleur.GREEN)
 						.script())
+				.add(new EtiqueterBuilder().couleur(Couleur.GREEN).epaisseur(1).orientation(Orientation.NORTH))
 				
 			/*.add(new EtiqueterBuilder()
 					.etiqueter("f")

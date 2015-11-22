@@ -17,10 +17,11 @@ public class Etiqueter  extends InstructionTerminale  {
 	private Etiquette etiquette;
 	
 	
-	public Etiqueter(Element element, Etiquette etiquette) {
+	public Etiqueter(Element element, Couleur couleur, int epaisseur, String texte,
+			Orientation orientation) {
 		super();
 		this.element = element;
-		this.etiquette = etiquette;
+		this.etiquette = Etiquette.creer(true, couleur, epaisseur, texte, element, orientation);
 	}
 	
 	public Element getElement() {
@@ -42,8 +43,7 @@ public class Etiqueter  extends InstructionTerminale  {
 	@Override
 	public Image executer(Image image) {
 		// TODO Auto-generated method stub
-		this.getEtiquette().setAssocie(this.getElement());
-		image.add(etiquette);
+		image.add(this.getEtiquette());
 		return image;
 	}
 

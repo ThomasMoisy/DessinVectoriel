@@ -85,7 +85,7 @@ public class TriangleBuilder extends FormeBuilder {
 	}
 
 	@Override
-	public Forme getForme() {
+	public Element getElement() {
 		return new Triangle(false, true, couleur, 1, p1, p2, p3);
 	}
 	
