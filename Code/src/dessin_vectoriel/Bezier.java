@@ -1,36 +1,36 @@
 package dessin_vectoriel;
 
-import java.util.List;
-
 import traducteurs.Traducteur;
 
-public class Bezier extends Element implements IElement{
-	
-	private List<Point> points;
+public class Bezier extends Element {
+	Point depart;
+	Point arrivee;
+	Point controle;
 
-	public Bezier(boolean visibilite, Couleur couleur, int epaisseur, List<Point> points) {
+	public Bezier(boolean visibilite, Couleur couleur, int epaisseur, Point depart, Point arrivee, Point controle) {
 		super(visibilite, couleur, epaisseur);
-		// TODO Auto-generated constructor stub
-		this.points=points;
-	}
-
-	public List<Point> getPoints() {
-		return points;
-	}
-
-	public void setPoints(List<Point> points) {
-		this.points = points;
+		this.depart = depart;
+		this.arrivee = arrivee;
+		this.controle = controle;
 	}
 	
-	public static Bezier creer(boolean visibilite, Couleur couleur, int epaisseur, List<Point> points){
-		return new Bezier(visibilite, couleur, epaisseur, points);
+	public Point getDepart() {
+		return depart;
+	}
+
+
+	public Point getArrivee() {
+		return arrivee;
+	}
+
+
+	public Point getControle() {
+		return controle;
 	}
 
 	@Override
 	public void traduire(Traducteur traducteur) {
-		// TODO Auto-generated method stub
 		traducteur.traduire(this);
 	}
-	
 
 }

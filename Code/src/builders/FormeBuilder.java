@@ -1,6 +1,5 @@
 package builders;
 
-import dessin_vectoriel.Forme;
 
 public abstract class FormeBuilder extends ElementBuilder{
 	

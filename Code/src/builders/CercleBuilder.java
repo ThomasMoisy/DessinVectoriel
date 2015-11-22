@@ -6,7 +6,6 @@ import java.util.List;
 import dessin_vectoriel.Cercle;
 import dessin_vectoriel.Couleur;
 import dessin_vectoriel.Element;
-import dessin_vectoriel.Forme;
 import dessin_vectoriel.Point;
 import script.Dessiner;
 import script.Script;
@@ -90,7 +89,7 @@ public class CercleBuilder extends FormeBuilder {
 		List<Element> list = new ArrayList<Element>();
 		list.add(cercle);
 		//retourne l'instruction Dessiner
-		return new Dessiner(list, couleur);
+		return new Dessiner(list);
 	}
 
 	@Override

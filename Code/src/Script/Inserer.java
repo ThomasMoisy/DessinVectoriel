@@ -2,7 +2,6 @@ package script;
 
 import java.util.List;
 
-import dessin_vectoriel.Couleur;
 import dessin_vectoriel.Element;
 import dessin_vectoriel.Image;
 
@@ -16,8 +15,8 @@ public class Inserer extends Dessiner {
 	private List<Element> elementsSupport;
 	
 
-	public Inserer(List<Element> elements, Couleur couleur, List<Element> elementsSupport) {
-		super(elements, couleur);
+	public Inserer(List<Element> elements, List<Element> elementsSupport) {
+		super(elements);
 		this.elementsSupport = elementsSupport;
 	}
 	

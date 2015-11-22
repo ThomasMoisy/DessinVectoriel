@@ -3,6 +3,8 @@ package test;
 
 
 import builders.AffectationFormeBuilder;
+import builders.BezierBuilder;
+import builders.CheminBuilder;
 import builders.DessinerBuilder;
 import builders.EtiqueterBuilder;
 import builders.ForBuilder;
@@ -69,6 +71,7 @@ public class Test {
 						.selectionne("f")
 						.couleur(Couleur.GREEN)
 						.script())
+<<<<<<< HEAD
 				.add(new EtiqueterBuilder()
 						.couleur(Couleur.GREEN)
 						.epaisseur(1)
@@ -76,6 +79,21 @@ public class Test {
 						.texte("R=10")
 						.etiqueter("f")
 						.script())
+=======
+				.add(new EtiqueterBuilder().couleur(Couleur.GREEN).epaisseur(1).orientation(Orientation.NORTH))
+				.add(new CheminBuilder()
+					.add(new BezierBuilder()
+								.depart(10,150)
+								.arrivee(180,180)
+								.controle(100,20)
+								.script())
+					.add(new BezierBuilder()
+						.depart(180,180)
+						.arrivee(280,120)
+						.controle(260,40)
+						.script())
+					.script())
+>>>>>>> 90693998ec440afd2b42aa8726ad82ac85897de6
 				
 			/*.add(new EtiqueterBuilder()
 					.etiqueter("f")

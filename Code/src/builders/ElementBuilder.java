@@ -2,7 +2,6 @@ package builders;
 
 import dessin_vectoriel.Couleur;
 import dessin_vectoriel.Element;
-import script.Script;
 
 public abstract class ElementBuilder extends ScriptBuilder{
 

@@ -64,7 +64,7 @@ public class ListePointsBuilder extends ScriptBuilder {
 			list.add(d);
 		}
 		//cree l'instruction dessiner
-		return new Dessiner(list, couleur);
+		return new Dessiner(list);
 	}
 
 }
