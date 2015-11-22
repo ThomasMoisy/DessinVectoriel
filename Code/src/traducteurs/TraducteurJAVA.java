@@ -83,10 +83,10 @@ public class TraducteurJAVA implements Traducteur {
 			}
 			g.setColor(color);
 			if(cercle.isRemplissage()){
-				g.fillOval(cercle.getBarycentre().getX(), cercle.getBarycentre().getY(), cercle.getR(), cercle.getR());
+				g.fillOval(cercle.getBarycentre().getX()-cercle.getR(), cercle.getBarycentre().getY()-cercle.getR(), 2*cercle.getR(), 2*cercle.getR());
 			}
 			else{
-				g.drawOval(cercle.getBarycentre().getX(), cercle.getBarycentre().getY(), cercle.getR(), cercle.getR());
+				g.drawOval(cercle.getBarycentre().getX()-cercle.getR(), cercle.getBarycentre().getY()-cercle.getR(), 2*cercle.getR(), 2*cercle.getR());
 			}
 		}
 	}
