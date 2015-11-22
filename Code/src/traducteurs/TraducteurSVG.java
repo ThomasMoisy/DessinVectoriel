@@ -115,15 +115,13 @@ public class TraducteurSVG implements Traducteur{
 	@Override
 	public void traduire(Rectangle rectangle) {
 		//<rect width="300" height="100" style="fill="blue" />
-		int cote = (int) (re.getDiagonale().norme()/Math.sqrt(2));
-		
 		Element rect = doc.createElement("rect");
 		Attr width = doc.createAttribute("width");
-		width.setValue(cote + "");
+		width.setValue(rectangle.getLargeur()+ "");
 		Attr height = doc.createAttribute("height");
-		height.setValue(cote + "");
+		height.setValue(rectangle.getLongueur() + "");
 		Attr style = doc.createAttribute("style");
-		style.setValue("fill:"+carre.getCouleur().getName());
+		style.setValue("fill:"+rectangle.getCouleur().getName());
 		rect.setAttributeNode(width);
 		rect.setAttributeNode(height);
 		rect.setAttributeNode(style);
