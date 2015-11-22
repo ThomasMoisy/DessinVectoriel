@@ -2,6 +2,8 @@ package main;
 
 
 
+import javax.swing.UIManager;
+
 import builders.AffectationFormeBuilder;
 import builders.BezierBuilder;
 import builders.CheminBuilder;
@@ -36,8 +38,8 @@ public class Main {
 						.script())
 				.add(new ListePointsBuilder()
 						.point(0,0)
-						.point(3,7)
-						.point(2,1)
+						.point(300,70)
+						.point(200,100)
 						.couleur(Couleur.BLUE)
 						.script())
 				.add(new ForBuilder()
@@ -66,9 +68,9 @@ public class Main {
 						.script())
 				.add(new AffectationFormeBuilder("f", new DessinerBuilder()
 												.cercle()
-												.centre(3, 5)
-												.rayon(6)
-												.couleur(Couleur.BLACK))
+												.centre(300, 500)
+												.rayon(60)
+												.couleur(Couleur.GREEN))
 						.script())
 				.add(new RemplirBuilder()
 						.selectionne("f")
@@ -80,7 +82,7 @@ public class Main {
 						.orientation(Orientation.NORTH)
 						.texte("R=10")
 						.etiqueter("f")
-						.position(Point.creer(50, 50))
+						.position(Point.creer(300, 300))
 						.script())
 				.add(new CheminBuilder()
 						/*

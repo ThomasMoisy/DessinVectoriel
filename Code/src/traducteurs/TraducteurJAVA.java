@@ -72,7 +72,8 @@ public class TraducteurJAVA implements Traducteur {
 	public void traduire(Cercle cercle) {
 		// TODO Auto-generated method stub
 		if(cercle.isVisibilite()){
-			g.setColor(Color.getColor(cercle.getCouleur().getName()));
+			g.setColor(Color.getColor("Color."+cercle.getCouleur().getName()));
+			System.out.println(""+Color.getColor(cercle.getCouleur().getName()));
 			if(cercle.isRemplissage()){
 				g.fillOval(cercle.getBarycentre().getX(), cercle.getBarycentre().getY(), cercle.getR(), cercle.getR());
 			}

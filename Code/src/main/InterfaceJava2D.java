@@ -1,6 +1,7 @@
 package main;
 
 import javax.swing.JFrame;
+import javax.swing.UIManager;
 
 import dessin_vectoriel.Image;
 
@@ -16,6 +17,13 @@ public class InterfaceJava2D extends JFrame{
 		this.getContentPane().add(new DessinJava2D(image));
 		this.setVisible(true);
 		this.pack();
+		
+		try{
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+			}
+		catch(Exception e){
+				
+			}
 	}
 	
 }
