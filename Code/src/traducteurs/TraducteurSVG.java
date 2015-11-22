@@ -67,7 +67,6 @@ public class TraducteurSVG implements Traducteur{
 	@Override
 	public void traduire(Image image) {
 		// TODO Auto-generated method stub
-		System.out.println("Image");
 		for (dessin_vectoriel.Element element : image.getElements()) {
 			element.traduire(this);
 		}
