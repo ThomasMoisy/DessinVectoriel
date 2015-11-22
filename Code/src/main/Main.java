@@ -10,6 +10,7 @@ import builders.DessinerBuilder;
 import builders.EtiqueterBuilder;
 import builders.ForBuilder;
 import builders.ListePointsBuilder;
+import builders.RectangleBuilder;
 import builders.RemplirBuilder;
 import builders.SequenceBuilder;
 import dessin_vectoriel.Couleur;
@@ -88,6 +89,13 @@ public class Main {
 					.add(310,80,310,190)
 					.couleur(Couleur.RED)
 					.script())
+				.add(new RectangleBuilder()
+						.largeur(50)
+						.longueur(60)
+						.barycentre(new Point (250,250))
+						.couleur(Couleur.YELLOW)
+						.epaisseur(20)
+						.script())
 				
 			.script();
 			
