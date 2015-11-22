@@ -44,37 +44,7 @@ public class CercleBuilder extends FormeBuilder {
 		return this;
 	}
 	
-	/**
-	 * regle la couleur du cercle
-	 * @param couleur, la couleur du cercle
-	 * @return un CercleBuilder
-	 */
-	public CercleBuilder couleur (Couleur couleur) {
-		this.couleur = couleur;
-		return this;
-	}
-	
-	/**
-	 * regle l epaisseur du cercle
-	 * @param epaisseur, l'epaisseur du cercle
-	 * @return un CercleBuilder
-	 */
-	
-	public CercleBuilder epaisseur (int epaisseur) {
-		this.epaisseur = epaisseur;
-		return this;
-	}
 
-	/**
-	 * regle la visibilite du cercle
-	 * @param visibilite, la visibilite du cercle
-	 * @return un CercleBuilder
-	 */
-	
-	public CercleBuilder visibilite (boolean visibilite) {
-		this.visibilite = visibilite;
-		return this;
-	}
 
 	/**
 	 * genere un Script a partir du builder

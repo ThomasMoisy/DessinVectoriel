@@ -8,6 +8,7 @@ import dessin_vectoriel.Couleur;
 import dessin_vectoriel.Element;
 import dessin_vectoriel.Etiquette;
 import dessin_vectoriel.Orientation;
+import dessin_vectoriel.Point;
 import script.ContexteElement;
 import script.Dessiner;
 import script.Etiqueter;
@@ -20,6 +21,7 @@ public class EtiqueterBuilder extends ScriptBuilder {
 	private Couleur couleur;
 	private Orientation orientation;
 	private int epaisseur;
+	private Point position;
 	
 	public EtiqueterBuilder() {
 		// TODO Auto-generated constructor stub
@@ -52,10 +54,15 @@ public class EtiqueterBuilder extends ScriptBuilder {
 		return this;
 	}
 
+	public EtiqueterBuilder position(Point position) throws Exception {
+		this.position=position;
+		return this;
+	}
+	
 	@Override
 	public Script script() throws Exception {
 		// TODO Auto-generated method stub
-		return new Etiqueter(associe.getElement(), couleur, epaisseur, texte, orientation);
+		return new Etiqueter(associe.getElement(), couleur, epaisseur, texte, orientation,position);
 	}
 	
 	

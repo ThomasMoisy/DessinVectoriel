@@ -21,7 +21,20 @@ public abstract class ElementBuilder extends ScriptBuilder{
 		this.visibilite = visibilite;
 	}
 	
+	public ElementBuilder couleur(Couleur couleur){
+		this.couleur=couleur;
+		return this;
+	}
 	
+	public ElementBuilder epaisseur(int epaisseur){
+		this.epaisseur=epaisseur;
+		return this;
+	}
+	
+	public ElementBuilder visibilite(boolean visibilite){
+		this.visibilite=visibilite;
+		return this;
+	}
 	
 	public abstract Element getElement();
 	

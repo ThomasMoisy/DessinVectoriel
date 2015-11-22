@@ -22,10 +22,11 @@ public class RectangleBuilder extends FormeBuilder {
 		return this;
 	}
 	
-	public RectangleBuilder couleur(int largeur) {
-		this.largeur = largeur;
+	public RectangleBuilder largeur(int largeur) {
+		this.largeur=largeur;
 		return this;
 	}
+	
 	
 	@Override
 	public Forme getElement() {

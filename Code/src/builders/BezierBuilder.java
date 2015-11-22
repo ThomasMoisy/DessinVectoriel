@@ -32,10 +32,7 @@ public class BezierBuilder extends FormeBuilder{
 		return new Dessiner(list);
 	}
 	
-	public BezierBuilder couleur(Couleur couleur) {
-		this.couleur = couleur;
-		return this;
-	}
+	
 
 	public BezierBuilder depart(int i, int j) {
 		depart = new Point(true, Couleur.BLACK, 1, i, j);
