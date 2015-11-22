@@ -20,13 +20,13 @@ import org.w3c.dom.Element;
 
 import dessin_vectoriel.Bezier;
 import dessin_vectoriel.BezierOld;
-import dessin_vectoriel.Carre;
 import dessin_vectoriel.Cercle;
 import dessin_vectoriel.CheminOld;
 import dessin_vectoriel.Droite;
 import dessin_vectoriel.Etiquette;
 import dessin_vectoriel.Image;
 import dessin_vectoriel.Point;
+import dessin_vectoriel.Rectangle;
 import dessin_vectoriel.Triangle;
 
 public class TraducteurSVG implements Traducteur{
@@ -113,9 +113,9 @@ public class TraducteurSVG implements Traducteur{
 	}
 
 	@Override
-	public void traduire(Carre carre) {
+	public void traduire(Rectangle rectangle) {
 		//<rect width="300" height="100" style="fill="blue" />
-		int cote = (int) (carre.getDiagonale().norme()/Math.sqrt(2));
+		int cote = (int) (re.getDiagonale().norme()/Math.sqrt(2));
 		
 		Element rect = doc.createElement("rect");
 		Attr width = doc.createAttribute("width");

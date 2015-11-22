@@ -6,7 +6,6 @@ import org.w3c.dom.Document;
 
 import dessin_vectoriel.Bezier;
 import dessin_vectoriel.BezierOld;
-import dessin_vectoriel.Carre;
 import dessin_vectoriel.Cercle;
 import dessin_vectoriel.CheminOld;
 import dessin_vectoriel.Droite;
