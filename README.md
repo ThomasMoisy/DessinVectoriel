@@ -12,14 +12,14 @@ Projet d'architecture logicielle - Un langage de dessin vectoriel (membres : Bap
 │   │   ├── builders      #builders de scripts
 │   │   ├── dessin_vectoriel   #forme et elements d'un dessin vectoriel
 │   │   ├── script        #scripts de dessin
-│   │   ├── test          #classe de test
+│   │   ├── test          #classe de main
 │   │   └── traducteurs   #implementation des traducteurs
 
 
 ````
 
 ##Test
-Pour tester, executer la classe `Test.java`.
+Pour tester, executer la classe `Main.java`.
 
 ###Traducteur SVG
-Après exécution de la classe `Test`, le dessin est traduit en SVG dans un fichier de trouvant dans `Code/dessin.svg`. Ouvrir dans un navigateur.
+Après exécution de la classe `Main`, le dessin est traduit en SVG dans un fichier de trouvant dans `Code/dessin.svg`. Ouvrir dans un navigateur.
