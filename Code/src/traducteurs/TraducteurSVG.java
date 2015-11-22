@@ -18,10 +18,8 @@ import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-import dessin_vectoriel.Bezier;
-import dessin_vectoriel.BezierOld;
 import dessin_vectoriel.Cercle;
-import dessin_vectoriel.CheminOld;
+import dessin_vectoriel.Chemin;
 import dessin_vectoriel.Droite;
 import dessin_vectoriel.Etiquette;
 import dessin_vectoriel.Image;
@@ -74,7 +72,7 @@ public class TraducteurSVG implements Traducteur{
 
 	
 
-	@Override
+	
 	/*
 	 * TM : 
 	 * Les courbes de Bezier en svg sont de deux types :
@@ -86,7 +84,7 @@ public class TraducteurSVG implements Traducteur{
 	 * 		ou on ajoute S et les points supplementaires 
 	 * Attention: Ne prend pour l'instant en compte que les courbes de Bezier de quatre ou six points
 	 */
-	public void traduire(BezierOld bezier) {
+	/*public void traduire(BezierOld bezier) {
 		Element path = doc.createElement("path");
 		List<Point> points = bezier.getPoints();
 		Attr d = doc.createAttribute("d");
@@ -110,7 +108,7 @@ public class TraducteurSVG implements Traducteur{
 		path.setAttributeNode(d);
 		path.setAttributeNode(style);
 		svg.appendChild(path);
-	}
+	}*/
 
 	@Override
 	public void traduire(Rectangle rectangle) {
@@ -147,11 +145,6 @@ public class TraducteurSVG implements Traducteur{
 		//<circle cx="90" cy="80" r="50" fill="blue" />
 	}
 
-	@Override
-	public void traduire(CheminOld chemin) {
-		// TODO Auto-generated method stub
-		
-	}
 
 	@Override
 	public void traduire(Droite droite) {
@@ -216,16 +209,19 @@ public class TraducteurSVG implements Traducteur{
 		}
 	}
 
+
 	@Override
-	public void traduire(Bezier bezier) {
+	public void traduire(Chemin chemin) {
 		Element path = doc.createElement("path");
-		String s = "M " + bezier.getDepart().getX() + "," + bezier.getDepart().getY();
-		s += " Q " + bezier.getControle().getX() + "," + bezier.getControle().getY();
-		s += " " + bezier.getArrivee().getX() + "," + bezier.getArrivee().getY();
+		String s = "M " + chemin.getDepart().getX() + "," + chemin.getDepart().getY();
+		for (int i = 0; i < chemin.getPoints().size()-1; i = i+2) {
+			s += " Q " + chemin.getPoints().get(i).getX() + "," + chemin.getPoints().get(i).getY();
+			s += " " + chemin.getPoints().get(i+1).getX() + "," + chemin.getPoints().get(i+1).getY();
+		}
 		Attr d = doc.createAttribute("d");
 		d.setValue(s);
 		Attr style = doc.createAttribute("style");
-		style.setValue("fill:none;stroke-width:0.1em;stroke-linecap:round;stroke:limegreen;");
+		style.setValue("fill:none;stroke-width:0.1em;stroke-linecap:round;stroke:"+chemin.getCouleur().getName()+";");
 		path.setAttributeNode(d);
 		path.setAttributeNode(style);
 		svg.appendChild(path);

@@ -1,16 +1,9 @@
 package builders;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import dessin_vectoriel.Cercle;
 import dessin_vectoriel.Couleur;
-import dessin_vectoriel.Element;
-import dessin_vectoriel.Etiquette;
 import dessin_vectoriel.Orientation;
 import dessin_vectoriel.Point;
 import script.ContexteElement;
-import script.Dessiner;
 import script.Etiqueter;
 import script.Script;
 

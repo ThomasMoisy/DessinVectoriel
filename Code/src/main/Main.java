@@ -3,7 +3,6 @@ package main;
 
 
 import builders.AffectationFormeBuilder;
-import builders.BezierBuilder;
 import builders.CheminBuilder;
 import builders.DessinerBuilder;
 import builders.EtiqueterBuilder;
@@ -11,14 +10,12 @@ import builders.ForBuilder;
 import builders.ListePointsBuilder;
 import builders.RemplirBuilder;
 import builders.SequenceBuilder;
-import dessin_vectoriel.Cercle;
 import dessin_vectoriel.Couleur;
 import dessin_vectoriel.Image;
 import dessin_vectoriel.Orientation;
 import dessin_vectoriel.Point;
 import script.AffectationVariable;
 import script.Script;
-import traducteurs.Traducteur;
 import traducteurs.TraducteurSVG;
 
 
@@ -83,19 +80,11 @@ public class Main {
 						.position(Point.creer(50, 50))
 						.script())
 				.add(new CheminBuilder()
-						/*
-					.add(new BezierBuilder()
-								.depart(10,150)
-								.arrivee(180,180)
-								.controle(100,20)
-								.couleur(Couleur.RED)
-								.script())
-					.add(new BezierBuilder()
-						.depart(180,180)
-						.arrivee(280,120)
-						.controle(260,40)
-						.couleur(Couleur.BLUE)
-						.script())*/
+					.depart(10,150)
+					.add(100,20,180,180)
+					.add(260,40,280,120)
+					.add(310,80,310,190)
+					.couleur(Couleur.RED)
 					.script())
 				
 			/*.add(new EtiqueterBuilder()

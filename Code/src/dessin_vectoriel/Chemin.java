@@ -5,18 +5,27 @@ import java.util.List;
 import traducteurs.Traducteur;
 
 public class Chemin extends Element{
-	List<Bezier> beziers;
+	Point depart;
+	List<Point> points;
 	
-	public Chemin(boolean visibilite, Couleur couleur, int epaisseur) {
+	public Chemin(boolean visibilite, Couleur couleur, int epaisseur, Point depart, List<Point> points) {
 		super(visibilite, couleur, epaisseur);
+		this.depart = depart;
+		this.points = points;
 	}
 	
+	
+	public Point getDepart() {
+		return depart;
+	}
+	
+	public List<Point> getPoints() {
+		return points;
+	}
 
 	@Override
 	public void traduire(Traducteur traducteur) {
-		for (Bezier bezier : beziers) {
-			bezier.traduire(traducteur);
-		}
+		traducteur.traduire(this);
 	}
 	
 	
