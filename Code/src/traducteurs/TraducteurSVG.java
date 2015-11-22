@@ -180,25 +180,6 @@ public class TraducteurSVG implements Traducteur{
 		
 	}
 
-	@Override
-	public void traduire(Point point) {
-		// On considere qu'un point est un cercle de rayon 3
-
-		Element circle = doc.createElement("circle");
-		Attr cx = doc.createAttribute("cx");
-		cx.setValue(point.getX() + "");
-		Attr cy = doc.createAttribute("cy");
-		cy.setValue(point.getY() + "");
-		Attr r = doc.createAttribute("r");
-		r.setValue("3");
-		Attr fill = doc.createAttribute("fill");
-		fill.setValue(point.getCouleur().getName());
-		circle.setAttributeNode(cx);
-		circle.setAttributeNode(cy);
-		circle.setAttributeNode(r);
-		circle.setAttributeNode(fill);
-		svg.appendChild(circle);
-	}
 
 	@Override
 	public void traduire(Triangle triangle) {

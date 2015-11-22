@@ -20,11 +20,11 @@ public class PointBuilder {
 		Point p;
 		if (this.x instanceof Integer) {
 			if (this.y instanceof Integer) {
-				p = new Point(true, couleur, 1, (int)x, (int)y);
+				p = new Point((int)x, (int)y);
 			}
 			else if (this.y instanceof String) {
 				int yy = Contexte.contexte.lookup((String)y);
-				p = new Point(true, couleur, 1, (int)x, yy);
+				p = new Point((int)x, yy);
 			}
 			else {
 				throw new Error();
@@ -33,12 +33,12 @@ public class PointBuilder {
 		else if (this.x instanceof String) {
 			if (this.y instanceof Integer) {
 				int xx = Contexte.contexte.lookup((String)x);
-				p = new Point(true, couleur, 1, xx, (int)y);
+				p = new Point( xx, (int)y);
 			}
 			else if (this.y instanceof String) {
 				int yy = Contexte.contexte.lookup((String)y);
 				int xx = Contexte.contexte.lookup((String)x);
-				p = new Point(true, couleur, 1, xx, yy);
+				p = new Point( xx, yy);
 			}
 			else {
 				throw new Error();

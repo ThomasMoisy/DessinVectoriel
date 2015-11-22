@@ -35,17 +35,17 @@ public class BezierBuilder extends FormeBuilder{
 	
 
 	public BezierBuilder depart(int i, int j) {
-		depart = new Point(true, Couleur.BLACK, 1, i, j);
+		depart = new Point( i, j);
 		return this;
 	}
 	
 	public BezierBuilder arrivee(int i, int j) {
-		arrivee = new Point(true, Couleur.BLACK, 1, i, j);
+		arrivee = new Point(i, j);
 		return this;
 	}
 	
 	public BezierBuilder controle(int i, int j) {
-		controle = new Point(true, Couleur.BLACK, 1, i, j);
+		controle = new Point( i, j);
 		return this;
 	}
 

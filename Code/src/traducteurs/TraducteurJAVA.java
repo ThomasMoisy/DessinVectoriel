@@ -94,11 +94,7 @@ public class TraducteurJAVA implements Traducteur {
 		}
 	}
 
-	@Override
-	public void traduire(Point point) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 
 	@Override
 	public void traduire(Triangle triangle) {

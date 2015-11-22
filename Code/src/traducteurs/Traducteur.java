@@ -21,7 +21,6 @@ public interface Traducteur {
 	public void traduire(CheminOld chemin);
 	public void traduire(Droite droite);
 	public void traduire(Etiquette etiquette);
-	public void traduire(Point point);
 	public void traduire(Triangle triangle);
 	
 }
