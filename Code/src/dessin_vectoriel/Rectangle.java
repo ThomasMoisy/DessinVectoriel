@@ -7,13 +7,13 @@ import traducteurs.Traducteur;
 public class Rectangle extends Forme implements IForme {
 	
 	private int largeur;
-	private int longueur;
+	private int hauteur;
 	
 	public Rectangle(boolean remplissage, boolean visibilite, Couleur couleur, int epaisseur, Point barycentre,
-			int largeur, int longueur) {
+			int largeur, int hauteur) {
 		super(remplissage, visibilite, couleur, epaisseur, barycentre);
 		this.largeur = largeur;
-		this.longueur = longueur;
+		this.hauteur = hauteur;
 	}
 
 	public int getLargeur() {
@@ -24,19 +24,19 @@ public class Rectangle extends Forme implements IForme {
 		this.largeur = largeur;
 	}
 
-	public int getLongueur() {
-		return longueur;
+	public int getHauteur() {
+		return hauteur;
 	}
 
-	public void setLongueur(int longueur) {
-		this.longueur = longueur;
+	public void setHauteur(int hauteur) {
+		this.hauteur = hauteur;
 	}
 
 
 	//BM : peut etre a creer dans Element et dans ce cas a appeler creerRectangle
 	public static Rectangle creer(boolean remplissage, boolean visibilite, Couleur couleur, int epaisseur, Point barycentre,
-				int largeur, int longueur){
-			return new Rectangle(remplissage, visibilite, couleur, epaisseur, barycentre, largeur, longueur);
+				int largeur, int hauteur){
+			return new Rectangle(remplissage, visibilite, couleur, epaisseur, barycentre, largeur, hauteur);
 	}
 
 	@Override

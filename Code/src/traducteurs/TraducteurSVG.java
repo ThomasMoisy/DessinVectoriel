@@ -117,10 +117,16 @@ public class TraducteurSVG implements Traducteur{
 		Attr width = doc.createAttribute("width");
 		width.setValue(rectangle.getLargeur()+ "");
 		Attr height = doc.createAttribute("height");
-		height.setValue(rectangle.getLongueur() + "");
+		height.setValue(rectangle.getHauteur() + "");
 		Attr style = doc.createAttribute("style");
 		String fill = rectangle.isRemplissage() ? rectangle.getCouleur().getName() : "transparent";
 		style.setValue("fill:"+fill+";stroke:"+rectangle.getCouleur().getName());
+		Attr x = doc.createAttribute("x");
+		x.setValue((rectangle.getBarycentre().getX() - rectangle.getLargeur()/2) + "");
+		Attr y = doc.createAttribute("y");
+		y.setValue((rectangle.getBarycentre().getY() - rectangle.getHauteur()/2) + "");
+		rect.setAttributeNode(x);
+		rect.setAttributeNode(y);
 		rect.setAttributeNode(width);
 		rect.setAttributeNode(height);
 		rect.setAttributeNode(style);

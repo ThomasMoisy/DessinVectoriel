@@ -90,7 +90,7 @@ public class Main {
 					.couleur(Couleur.RED)
 					.script())
 				.add(new RectangleBuilder()
-						.largeur(50)
+						.hauteur(50)
 						.longueur(60)
 						.barycentre(new Point (250,250))
 						.couleur(Couleur.YELLOW)

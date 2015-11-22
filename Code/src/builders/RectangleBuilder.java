@@ -11,7 +11,7 @@ import script.Script;
 public class RectangleBuilder extends FormeBuilder {
 
 	private int longueur;
-	private int largeur;
+	private int hauteur;
 	
 	public RectangleBuilder() {}
 	
@@ -20,21 +20,21 @@ public class RectangleBuilder extends FormeBuilder {
 		return this;
 	}
 	
-	public RectangleBuilder largeur(int largeur) {
-		this.largeur=largeur;
+	public RectangleBuilder hauteur(int hauteur) {
+		this.hauteur=hauteur;
 		return this;
 	}
 	
 	
 	@Override
 	public Forme getElement() {
-		return Rectangle.creer(remplissage, visibilite, couleur, largeur, barycentre, largeur, longueur);
+		return Rectangle.creer(remplissage, visibilite, couleur, 1, barycentre, hauteur, longueur);
 	}
 
 	@Override
 	public Script script() throws Exception {
 		//cree un carre avec les bons parametres
-		Rectangle rectangle = Rectangle.creer(remplissage, true, couleur, largeur, barycentre, largeur, longueur);
+		Rectangle rectangle = Rectangle.creer(remplissage, true, couleur, 1, barycentre, hauteur, longueur);
 		//ajoute ce cercle a une liste
 		List<Element> list = new ArrayList<Element>();
 		list.add(rectangle);

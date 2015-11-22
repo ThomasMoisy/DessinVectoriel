@@ -62,10 +62,10 @@ public class TraducteurJAVA implements Traducteur {
 			}
 			g.setColor(color);
 			if(rectangle.isRemplissage()){
-				g.fillRect(rectangle.getBarycentre().getX()-rectangle.getLargeur()/2, rectangle.getBarycentre().getY()-rectangle.getLongueur()/2, rectangle.getLargeur(), rectangle.getLongueur());
+				g.fillRect(rectangle.getBarycentre().getX()-rectangle.getLargeur()/2, rectangle.getBarycentre().getY()-rectangle.getHauteur()/2, rectangle.getLargeur(), rectangle.getHauteur());
 			}
 			else{
-				g.drawRect(rectangle.getBarycentre().getX()-rectangle.getLargeur()/2, rectangle.getBarycentre().getY()-rectangle.getLongueur()/2, rectangle.getLargeur(), rectangle.getLongueur());
+				g.drawRect(rectangle.getBarycentre().getX()-rectangle.getLargeur()/2, rectangle.getBarycentre().getY()-rectangle.getHauteur()/2, rectangle.getLargeur(), rectangle.getHauteur());
 			}
 		}
 	}
