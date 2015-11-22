@@ -54,6 +54,28 @@ public class CercleBuilder extends FormeBuilder {
 		this.couleur = couleur;
 		return this;
 	}
+	
+	/**
+	 * regle l epaisseur du cercle
+	 * @param epaisseur, l'epaisseur du cercle
+	 * @return un CercleBuilder
+	 */
+	
+	public CercleBuilder epaisseur (int epaisseur) {
+		this.epaisseur = epaisseur;
+		return this;
+	}
+
+	/**
+	 * regle la visibilite du cercle
+	 * @param visibilite, la visibilite du cercle
+	 * @return un CercleBuilder
+	 */
+	
+	public CercleBuilder visibilite (boolean visibilite) {
+		this.visibilite = visibilite;
+		return this;
+	}
 
 	/**
 	 * genere un Script a partir du builder
@@ -63,7 +85,7 @@ public class CercleBuilder extends FormeBuilder {
 	public Script script() {
 		//cree un cercle avec les bons parametres
 		
-		Cercle cercle = new Cercle(remplissage, true, couleur, 1, centre, rayon);
+		Cercle cercle = new Cercle(remplissage, true, couleur, epaisseur, centre, rayon);
 		//ajoute ce cercle a une liste
 		List<Element> list = new ArrayList<Element>();
 		list.add(cercle);
@@ -73,6 +95,6 @@ public class CercleBuilder extends FormeBuilder {
 
 	@Override
 	public Forme getForme() {
-		return new Cercle(remplissage, true, couleur, 1, centre, rayon);
+		return new Cercle(remplissage, true, couleur, epaisseur, centre, rayon);
 	}
 }
