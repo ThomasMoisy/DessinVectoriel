@@ -1,7 +1,6 @@
 package script;
 
-import builders.FormeBuilder;
-import dessin_vectoriel.Forme;
+import builders.ElementBuilder;
 import dessin_vectoriel.Image;
 
 /**
@@ -11,9 +10,9 @@ import dessin_vectoriel.Image;
 public class AffectationForme extends InstructionTerminale {
 
 	String identifiant;
-	FormeBuilder builder;
+	ElementBuilder builder;
 	
-	public AffectationForme(String identifiant, FormeBuilder builder) {
+	public AffectationForme(String identifiant, ElementBuilder builder) {
 		super();
 		this.identifiant = identifiant;
 		this.builder = builder;
@@ -27,11 +26,11 @@ public class AffectationForme extends InstructionTerminale {
 		this.identifiant = identifiant;
 	}
 
-	public FormeBuilder getBuilder() {
+	public ElementBuilder getBuilder() {
 		return builder;
 	}
 
-	public void setBuilder(FormeBuilder builder) {
+	public void setBuilder(ElementBuilder builder) {
 		this.builder = builder;
 	}
 

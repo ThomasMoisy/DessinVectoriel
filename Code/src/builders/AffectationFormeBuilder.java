@@ -6,9 +6,9 @@ import script.Script;
 
 public class AffectationFormeBuilder extends ScriptBuilder{
 	String identifiant;
-	FormeBuilder builder;
+	ElementBuilder builder;
 	
-	public AffectationFormeBuilder(String identifiant, FormeBuilder builder) {
+	public AffectationFormeBuilder(String identifiant, ElementBuilder builder) {
 		super();
 		this.identifiant = identifiant;
 		this.builder = builder;
