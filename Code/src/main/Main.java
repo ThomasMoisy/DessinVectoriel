@@ -89,12 +89,6 @@ public class Main {
 					.couleur(Couleur.RED)
 					.script())
 				
-			/*.add(new EtiqueterBuilder()
-					.etiqueter("f")
-					.couleur(Couleur.VERT)
-					.epaisseur(10)
-					.orientation(Orientation.NORTH)
-					.script())*/
 			.script();
 			
 			//Exécution du script qui va créer un objet de type Image qui sera notre dessin vectoriel
