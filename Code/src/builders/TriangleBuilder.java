@@ -5,7 +5,6 @@ import java.util.List;
 
 import dessin_vectoriel.Couleur;
 import dessin_vectoriel.Element;
-import dessin_vectoriel.Forme;
 import dessin_vectoriel.Point;
 import dessin_vectoriel.Triangle;
 import script.Dessiner;
@@ -81,7 +80,7 @@ public class TriangleBuilder extends FormeBuilder {
 		//ajoute ce triangle a une liste
 		list.add(triangle);
 		//retourne l'instruction Dessiner
-		return new Dessiner(list, couleur);
+		return new Dessiner(list);
 	}
 
 	@Override

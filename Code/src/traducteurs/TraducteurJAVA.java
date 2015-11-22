@@ -3,9 +3,10 @@ package traducteurs;
 import org.w3c.dom.Document;
 
 import dessin_vectoriel.Bezier;
+import dessin_vectoriel.BezierOld;
 import dessin_vectoriel.Carre;
 import dessin_vectoriel.Cercle;
-import dessin_vectoriel.Chemin;
+import dessin_vectoriel.CheminOld;
 import dessin_vectoriel.Droite;
 import dessin_vectoriel.Etiquette;
 import dessin_vectoriel.Image;
@@ -28,7 +29,7 @@ public class TraducteurJAVA implements Traducteur {
 	}
 
 	@Override
-	public void traduire(Bezier bezier) {
+	public void traduire(BezierOld bezier) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -46,7 +47,7 @@ public class TraducteurJAVA implements Traducteur {
 	}
 
 	@Override
-	public void traduire(Chemin chemin) {
+	public void traduire(CheminOld chemin) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -71,6 +72,12 @@ public class TraducteurJAVA implements Traducteur {
 
 	@Override
 	public void traduire(Triangle triangle) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void traduire(Bezier bezier) {
 		// TODO Auto-generated method stub
 		
 	}

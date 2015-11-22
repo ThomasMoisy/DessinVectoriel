@@ -2,7 +2,6 @@ package script;
 
 import java.util.List;
 
-import dessin_vectoriel.Couleur;
 import dessin_vectoriel.Element;
 import dessin_vectoriel.Image;
 
@@ -12,13 +11,11 @@ import dessin_vectoriel.Image;
  */
 public class Dessiner extends InstructionTerminale{
 	private List<Element> elements;
-	private Couleur couleur;
 	
 
-	public Dessiner(List<Element> elements, Couleur couleur) {
+	public Dessiner(List<Element> elements) {
 		super();
 		this.elements = elements;
-		this.couleur = couleur;
 	}
 
 	public List<Element> getElements() {

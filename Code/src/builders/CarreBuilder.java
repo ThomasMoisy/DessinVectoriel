@@ -6,7 +6,6 @@ import java.util.List;
 import script.Dessiner;
 import script.Script;
 import dessin_vectoriel.Carre;
-import dessin_vectoriel.Cercle;
 import dessin_vectoriel.Couleur;
 import dessin_vectoriel.Element;
 import dessin_vectoriel.Forme;
@@ -47,7 +46,7 @@ public class CarreBuilder extends FormeBuilder {
 		List<Element> list = new ArrayList<Element>();
 		list.add(carre);
 		//retourne l'instruction Dessiner
-		return new Dessiner(list, couleur);
+		return new Dessiner(list);
 	}
 
 }
