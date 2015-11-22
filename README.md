@@ -12,7 +12,7 @@ Projet d'architecture logicielle - Un langage de dessin vectoriel (membres : Bap
 │   │   ├── builders      #builders de scripts
 │   │   ├── dessin_vectoriel   #forme et elements d'un dessin vectoriel
 │   │   ├── script        #scripts de dessin
-│   │   ├── test          #classe de main
+│   │   ├── main          #classe de test
 │   │   └── traducteurs   #implementation des traducteurs
 
 
