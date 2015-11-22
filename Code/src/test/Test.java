@@ -71,7 +71,6 @@ public class Test {
 						.selectionne("f")
 						.couleur(Couleur.GREEN)
 						.script())
-<<<<<<< HEAD
 				.add(new EtiqueterBuilder()
 						.couleur(Couleur.GREEN)
 						.epaisseur(1)
@@ -79,8 +78,6 @@ public class Test {
 						.texte("R=10")
 						.etiqueter("f")
 						.script())
-=======
-				.add(new EtiqueterBuilder().couleur(Couleur.GREEN).epaisseur(1).orientation(Orientation.NORTH))
 				.add(new CheminBuilder()
 					.add(new BezierBuilder()
 								.depart(10,150)
@@ -93,7 +90,6 @@ public class Test {
 						.controle(260,40)
 						.script())
 					.script())
->>>>>>> 90693998ec440afd2b42aa8726ad82ac85897de6
 				
 			/*.add(new EtiqueterBuilder()
 					.etiqueter("f")
