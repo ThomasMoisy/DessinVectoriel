@@ -9,6 +9,10 @@ public abstract class ElementBuilder extends ScriptBuilder{
 	int epaisseur;
 	boolean visibilite;
 	
+	public Couleur getCouleur() {
+		return couleur;
+	}
+	
 	public void setCouleur(Couleur couleur) {
 		this.couleur = couleur;
 	}

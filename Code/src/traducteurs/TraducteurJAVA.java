@@ -6,10 +6,8 @@ import java.awt.geom.Path2D;
 
 import org.w3c.dom.Document;
 
-import dessin_vectoriel.Bezier;
-import dessin_vectoriel.BezierOld;
 import dessin_vectoriel.Cercle;
-import dessin_vectoriel.CheminOld;
+import dessin_vectoriel.Chemin;
 import dessin_vectoriel.Droite;
 import dessin_vectoriel.Etiquette;
 import dessin_vectoriel.Image;
@@ -146,6 +144,14 @@ public class TraducteurJAVA implements Traducteur {
 			path.curveTo(bezier.getArrivee().getX(), bezier.getArrivee().getY(), bezier.getControle().getX(), bezier.getControle().getY(), bezier.getArrivee().getX(), bezier.getArrivee().getY());
 			g.draw(path);
 		}
+	}
+
+
+
+	@Override
+	public void traduire(Chemin chemin) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	
