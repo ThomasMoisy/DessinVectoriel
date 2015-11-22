@@ -35,7 +35,7 @@ public class CarreBuilder extends FormeBuilder {
 	}
 	
 	@Override
-	public Forme getForme() {
+	public Forme getElement() {
 		return Carre.creer(false, true, couleur, 1, p1, p2, p3, p4);
 	}
 
