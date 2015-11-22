@@ -15,6 +15,7 @@ import dessin_vectoriel.Cercle;
 import dessin_vectoriel.Couleur;
 import dessin_vectoriel.Image;
 import dessin_vectoriel.Orientation;
+import dessin_vectoriel.Point;
 import script.AffectationVariable;
 import script.Script;
 import traducteurs.Traducteur;
@@ -44,7 +45,9 @@ public class Main {
 						.variable("i")
 						.add(new ListePointsBuilder()
 								.point("i", 3)
-								.point(1, 2))
+								.point(1, 2)
+								.couleur(Couleur.GREEN)
+								)
 						.add(new DessinerBuilder()
 								.triangle()
 								.point1(10,12)
@@ -77,18 +80,22 @@ public class Main {
 						.orientation(Orientation.NORTH)
 						.texte("R=10")
 						.etiqueter("f")
+						.position(Point.creer(50, 50))
 						.script())
 				.add(new CheminBuilder()
+						/*
 					.add(new BezierBuilder()
 								.depart(10,150)
 								.arrivee(180,180)
 								.controle(100,20)
+								.couleur(Couleur.RED)
 								.script())
 					.add(new BezierBuilder()
 						.depart(180,180)
 						.arrivee(280,120)
 						.controle(260,40)
-						.script())
+						.couleur(Couleur.BLUE)
+						.script())*/
 					.script())
 				
 			/*.add(new EtiqueterBuilder()
@@ -107,6 +114,9 @@ public class Main {
 			TraducteurSVG traducteurSVG = new TraducteurSVG();
 			traducteurSVG.traduire(image);
 			traducteurSVG.save();
+			
+			//Traduction Java
+			new InterfaceJava2D(image);
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

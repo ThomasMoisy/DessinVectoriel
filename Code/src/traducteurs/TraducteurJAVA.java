@@ -2,6 +2,7 @@ package traducteurs;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.geom.Path2D;
 
 import org.w3c.dom.Document;
 
@@ -24,6 +25,20 @@ public class TraducteurJAVA implements Traducteur {
 		super();
 		this.g = g;
 	}
+	
+	
+
+	public Graphics2D getG() {
+		return g;
+	}
+
+
+
+	public void setG(Graphics2D g) {
+		this.g = g;
+	}
+
+
 
 	@Override
 	public void traduire(Image image) {
@@ -99,13 +114,37 @@ public class TraducteurJAVA implements Traducteur {
 	@Override
 	public void traduire(Triangle triangle) {
 		// TODO Auto-generated method stub
-		
+		if(triangle.isVisibilite()){
+			g.setColor(Color.getColor(triangle.getCouleur().getName()));
+			int[] xPoints = new int[3];
+			int[] yPoints = new int[3];
+			
+			xPoints[0]=triangle.getP1().getX();
+			yPoints[0]=triangle.getP1().getY();
+			
+			xPoints[1]=triangle.getP2().getX();
+			yPoints[1]=triangle.getP2().getY();
+			
+			xPoints[2]=triangle.getP3().getX();
+			yPoints[2]=triangle.getP3().getY();
+			
+			if(triangle.isRemplissage()){
+				g.fillPolygon(xPoints, yPoints, 3);
+			}
+			else{
+				g.drawPolygon(xPoints, yPoints, 3);			}
+		}
 	}
 
 	@Override
 	public void traduire(Bezier bezier) {
 		// TODO Auto-generated method stub
-		
+		if(bezier.isVisibilite()){
+			g.setColor(Color.getColor(bezier.getCouleur().getName()));
+			Path2D path = new Path2D.Float();
+			path.curveTo(bezier.getArrivee().getX(), bezier.getArrivee().getY(), bezier.getControle().getX(), bezier.getControle().getY(), bezier.getArrivee().getX(), bezier.getArrivee().getY());
+			g.draw(path);
+		}
 	}
 
 	
