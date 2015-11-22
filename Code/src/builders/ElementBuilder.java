@@ -21,6 +21,8 @@ public abstract class ElementBuilder extends ScriptBuilder{
 		this.visibilite = visibilite;
 	}
 	
+	
+	
 	public abstract Element getElement();
 	
 	

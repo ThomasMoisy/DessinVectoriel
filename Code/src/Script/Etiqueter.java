@@ -5,6 +5,7 @@ import dessin_vectoriel.Element;
 import dessin_vectoriel.Etiquette;
 import dessin_vectoriel.Image;
 import dessin_vectoriel.Orientation;
+import dessin_vectoriel.Point;
 
 
 /* BM : 
@@ -18,10 +19,10 @@ public class Etiqueter  extends InstructionTerminale  {
 	
 	
 	public Etiqueter(Element element, Couleur couleur, int epaisseur, String texte,
-			Orientation orientation) {
+			Orientation orientation, Point position) {
 		super();
 		this.element = element;
-		this.etiquette = Etiquette.creer(true, couleur, epaisseur, texte, element, orientation);
+		this.etiquette = Etiquette.creer(true, couleur, epaisseur, texte, element, orientation,position);
 	}
 	
 	public Element getElement() {

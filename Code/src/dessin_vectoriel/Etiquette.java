@@ -8,14 +8,30 @@ public class Etiquette extends Element {
 	private String texte;
 	private Element associe;
 	private Orientation orientation;
+	private Point position;
 
 	public Etiquette(boolean visibilite, Couleur couleur, int epaisseur, String texte, Element associe,
-			Orientation orientation) {
+			Orientation orientation, Point position) {
 		super(visibilite, couleur, epaisseur);
 		this.texte = texte;
 		this.associe = associe;
 		this.orientation = orientation;
+		this.position = position;
 	}
+
+	
+	
+	public Point getPosition() {
+		return position;
+	}
+
+
+
+	public void setPosition(Point position) {
+		this.position = position;
+	}
+
+
 
 	public String getTexte() {
 		return texte;
@@ -42,8 +58,8 @@ public class Etiquette extends Element {
 	}
 	
 	public static Etiquette creer(boolean visibilite, Couleur couleur, int epaisseur, String texte, Element associe,
-			Orientation orientation){
-		return new Etiquette(visibilite, couleur, epaisseur, texte, associe, orientation);
+			Orientation orientation,Point position){
+		return new Etiquette(visibilite, couleur, epaisseur, texte, associe, orientation, position);
 	}
 	
 	@Override

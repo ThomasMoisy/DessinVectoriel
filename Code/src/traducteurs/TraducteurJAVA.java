@@ -1,5 +1,6 @@
 package traducteurs;
 
+import java.awt.Color;
 import java.awt.Graphics2D;
 
 import org.w3c.dom.Document;
@@ -35,15 +36,15 @@ public class TraducteurJAVA implements Traducteur {
 	@Override
 	public void traduire(BezierOld bezier) {
 		// TODO Auto-generated method stub
-		g.draw
+		
 	}
 
 	@Override
 	public void traduire(Rectangle rectangle) {
 		// TODO Auto-generated method stub
 		if(rectangle.isVisibilite()){
+			g.setColor(Color.getColor(rectangle.getCouleur().getName()));
 			if(rectangle.isRemplissage()){
-				Rectangle rectangle = new Rec
 				g.fillRect(rectangle.getBarycentre().getX()-rectangle.getLargeur()/2, rectangle.getBarycentre().getY()-rectangle.getLongueur()/2, rectangle.getLargeur(), rectangle.getLongueur());
 			}
 			else{
@@ -55,7 +56,15 @@ public class TraducteurJAVA implements Traducteur {
 	@Override
 	public void traduire(Cercle cercle) {
 		// TODO Auto-generated method stub
-		
+		if(cercle.isVisibilite()){
+			g.setColor(Color.getColor(cercle.getCouleur().getName()));
+			if(cercle.isRemplissage()){
+				g.fillOval(cercle.getBarycentre().getX(), cercle.getBarycentre().getY(), cercle.getR(), cercle.getR());
+			}
+			else{
+				g.drawOval(cercle.getBarycentre().getX(), cercle.getBarycentre().getY(), cercle.getR(), cercle.getR());
+			}
+		}
 	}
 
 	@Override
@@ -67,13 +76,22 @@ public class TraducteurJAVA implements Traducteur {
 	@Override
 	public void traduire(Droite droite) {
 		// TODO Auto-generated method stub
-		
+		if(droite.isVisibilite()){
+			g.setColor(Color.getColor(droite.getCouleur().getName()));
+			g.drawLine(droite.getVecteur().getOrigine().getX(), droite.getVecteur().getOrigine().getY(), droite.getVecteur().getImage().getX(), droite.getVecteur().getImage().getY());
+		}
 	}
 
+	/*
+	 * pour le moment l'étiquette est represente sur le barycentre
+	 */
 	@Override
 	public void traduire(Etiquette etiquette) {
 		// TODO Auto-generated method stub
-		
+		if(etiquette.isVisibilite()){
+			g.setColor(Color.getColor(etiquette.getCouleur().getName()));
+			g.drawString(etiquette.getTexte(), etiquette.getPosition().getX(),etiquette.getPosition().getY());
+		}
 	}
 
 	@Override
