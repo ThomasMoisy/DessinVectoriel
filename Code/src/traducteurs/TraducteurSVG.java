@@ -119,7 +119,8 @@ public class TraducteurSVG implements Traducteur{
 		Attr height = doc.createAttribute("height");
 		height.setValue(rectangle.getLongueur() + "");
 		Attr style = doc.createAttribute("style");
-		style.setValue("fill:"+rectangle.getCouleur().getName());
+		String fill = rectangle.isRemplissage() ? rectangle.getCouleur().getName() : "transparent";
+		style.setValue("fill:"+fill+";stroke:"+rectangle.getCouleur().getName());
 		rect.setAttributeNode(width);
 		rect.setAttributeNode(height);
 		rect.setAttributeNode(style);
@@ -135,12 +136,13 @@ public class TraducteurSVG implements Traducteur{
 		cy.setValue(cercle.getBarycentre().getY() + "");
 		Attr r = doc.createAttribute("r");
 		r.setValue(cercle.getR() + "");
-		Attr fill = doc.createAttribute("fill");
-		fill.setValue(cercle.getCouleur().getName());
+		Attr style = doc.createAttribute("style");
+		String fill = cercle.isRemplissage() ? cercle.getCouleur().getName() : "transparent";
+		style.setValue("fill:"+fill+";stroke:"+cercle.getCouleur().getName());
 		circle.setAttributeNode(cx);
 		circle.setAttributeNode(cy);
 		circle.setAttributeNode(r);
-		circle.setAttributeNode(fill);
+		circle.setAttributeNode(style);
 		svg.appendChild(circle);
 		//<circle cx="90" cy="80" r="50" fill="blue" />
 	}
@@ -152,18 +154,20 @@ public class TraducteurSVG implements Traducteur{
 		
 		Element line = doc.createElement("line");
 		Attr x1 = doc.createAttribute("x1");
-		x1.setValue(droite.getVecteur().getImage().getX()+ "");
+		x1.setValue(droite.getVecteur().getOrigine().getX()+ "");
 		Attr y1 = doc.createAttribute("y1");
-		y1.setValue(droite.getVecteur().getImage().getY()+ "");
+		y1.setValue(droite.getVecteur().getOrigine().getY()+ "");
 		Attr x2 = doc.createAttribute("x2");
 		x2.setValue(droite.getVecteur().getImage().getX()+ "");
 		Attr y2 = doc.createAttribute("y2");
 		y2.setValue(droite.getVecteur().getImage().getY()+ "");
-		
+		Attr style = doc.createAttribute("style");
+		style.setValue("stroke:"+droite.getCouleur().getName()+";stroke-width:1");
+		line.setAttributeNode(style);
 		line.setAttributeNode(x1);
 		line.setAttributeNode(y1);
 		line.setAttributeNode(x2);
-		line.setAttributeNode(y1);
+		line.setAttributeNode(y2);
 		svg.appendChild(line);
 	}
 
@@ -184,7 +188,8 @@ public class TraducteurSVG implements Traducteur{
 		string += " " + triangle.getP3().getX() + "," +  triangle.getP3().getY();
 		points.setValue(string);
 		Attr style = doc.createAttribute("style");
-		style.setValue("fill:"+triangle.getCouleur().getName());
+		String fill = triangle.isRemplissage() ? triangle.getCouleur().getName() : "transparent";
+		style.setValue("fill:"+fill+";stroke:"+triangle.getCouleur().getName());
 		polygon.setAttributeNode(style);
 		polygon.setAttributeNode(points);
 		svg.appendChild(polygon);
