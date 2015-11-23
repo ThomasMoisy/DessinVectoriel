@@ -7,9 +7,9 @@ Thomas Moisy
 
 
 
-##1. Présentation de l’architecture mise en place :
+##Présentation de l’architecture mise en place
 
-###a. Représentation d'un script: 
+###1. Représentation d'un script : 
 
 **Contexte :**  
 Nous devons générer un script qui contient des instructions décrivant les opérations de l’utilisateur.   
@@ -22,7 +22,7 @@ Nous utilisons le patron de conception composite puisqu’il a l’avantage de r
 
     
       
-**Description du patron appliquée à notre problème :**
+**Description du patron appliqué à notre problème :**
 
 
 ![alt text](arch.jpg)
@@ -40,7 +40,7 @@ Alternative : condition '?' script ':' script ;
 InstructionTerminale : 'dessiner' | 'remplir' | 'étiqueter' ;
 ````
 
-###b. Structure du package dessin vectoriel
+###2. Structure du package dessin vectoriel : 
 
 
 **Contexte :**  
@@ -48,14 +48,14 @@ Ce package est destiné à représenter de façon logique le dessin (l'image dan
 **Problème :**    
 Le code doit être le plus modulaire possible notamment pour permettre éventuellement de rajouter de nouvelles formes ou de nouvelles fonctionnalités pour dessiner facilement.    
 **Solution :**    
-Nous avons utilisé une architecture en couches reposant sur des relations d'aggrégation, de composition et d'héritage. Certaines méthodes communes à différents objets sont implémentées dans des classes abstraites telles que Forme et Element qui constitue la couche haute de cette implémentation et permet d'éviter la redondance dans le code. La couche basse représente les classes concrètes d'implémentation comme Cercle, Dessin, Chemin etc.
+Nous avons utilisé une architecture en couches reposant sur des relations d'aggrégation, de composition et d'héritage. Certaines méthodes communes à différents objets sont implémentées dans des classes abstraites telles que Forme et Element qui constituent la couche haute de cette implémentation et permettent d'éviter la redondance dans le code. La couche basse représente les classes concrètes d'implémentation comme Cercle, Dessin, Chemin etc.
 
 ![alt text](UML_dessin_vectoriel_nouveau.png)
 
 *Les différents objets dont le nom est de la forme IObjet sont des interfaces, les classes Element et Forme sont des classes abstraites*
 
 
-###c. Utilisation de la méthode Builder :
+###3. Utilisation de la méthode Builder :
 
 **Contexte :**  
 Nous devons générer un script qui contient les instructions décrivant les opérations de l’utilisateur. Ce script est écrit dans un langage que nous avons défini.  
@@ -76,9 +76,9 @@ PointsBuilder point(int x, int y);
 ````
 nous permettant de créer un point.
 
-###d. Utilisation du patron visiteur pour la traduction :
+###4. Utilisation du patron visiteur pour la traduction :
 **Contexte :**  
-La logique du dessin vectoriel a donc été implémenté et il est désormais possible de générer des scripts utilisant notre langage. Il reste désormais à réaliser l'étape de traduction de ce script pour pouvoir visualiser le dessin.    
+La logique du dessin vectoriel a donc été implémentée et il est désormais possible de générer des scripts utilisant notre langage. Il reste désormais à réaliser l'étape de traduction de ce script pour pouvoir visualiser le dessin.    
 **Problème :**     
 La partie traduction ne doit pas imposer de contraintes à notre langage et il se peut qu'un utilisateur souhaite ajouter de nouveaux modes de traduction. Il est évidemment préférable qu'il puisse le faire aisément sans avoir à modifier du code existant.    
 **Solution :**    
@@ -92,7 +92,6 @@ Dans notre cas, nous avons choisi de réaliser la traduction en utilisant deux c
 
 *Ici seuls les éléments Chemin et Rectangle sont mentionnés pour plus de lisibilité mais chaque Element possède une méthode traduire*
 
-##2. Points à améliorer :
+###5. Points à améliorer :
 
 - Insérer : à notre sens, la fonction d'insertion doit permettre d'insérer une forme dans une autre forme. Nous ne savions pas comment déterminer si une forme peut ou ne peut pas être insérée à l'intérieur d'une autre. Nous n'avons donc pas implémenté cette fonctionnalité.
-- 
