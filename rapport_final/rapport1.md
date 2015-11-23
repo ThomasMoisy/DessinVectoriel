@@ -77,12 +77,20 @@ PointsBuilder point(int x, int y);
 nous permettant de créer un point.
 
 ###d. Utilisation du patron visiteur pour la traduction :
+**Contexte :**  
+La logique du dessin vectoriel a donc été implémenté et il est désormais possible de générer des scripts utilisant notre langage. Il reste désormais à réaliser l'étape de traduction de ce script pour pouvoir visualiser le dessin.    
+**Problème :**     
+La partie traduction ne doit pas imposer de contraintes à notre langage et il se peut qu'un utilisateur souhaite ajouter de nouveaux modes de traduction. Il est évidemment préférable qu'il puisse le faire aisément sans avoir à modifier du code existant.    
+**Solution :**    
+Pour résoudre ce problème, le patron Visiteur est utilisé car il permet de visiter toutes les formes de l'image indépendemment du traducteur. C'est lors de la visite de chaque Element, que l'implémentation du traducteur va être appelé avec en paramètre l'élément à traduire.
 
-Pour implémenter la traduction, nous utilisons deux classes de traductions pour les deux implémentation suivantes : TraductionJava2D et TraductionSVG, ces deux classes implémentant l'interface Traducteur. L'interface Traducteur a autant de méthode traduire(…) que de forme existantes (traduire(Carre carre), traduire(Chemin chemin) etc.).
+Dans notre cas, nous avons choisi de réaliser la traduction en utilisant deux classes de traductions pour les deux implémentation suivantes : TraductionJava2D et TraductionSVG, ces deux classes implémentant l'interface Traducteur. L'interface Traducteur a autant de méthode traduire(…) que de forme existantes (traduire(Carre carre), traduire(Chemin chemin) etc.).
 
-Pour effectuer la traduction avec un traducteur choisi, on utilise le patron Visiteur qui permet de visiter toutes les forme de l'image indépendemment du traducteur. C'est lors de la visite de chaque Element, que l'implémentation du traducteur va être appelé avec en paramètre l'élément à traduire.
+**Description du patron visiteur appliqué à notre problème :**     
 
 ![alt text](Visiteur.png)
+
+*Ici seuls les éléments Chemin et Rectangle sont mentionnés pour plus de lisibilité mais chaque Element possède une méthode traduire*
 
 ##2. Points à améliorer :
 
