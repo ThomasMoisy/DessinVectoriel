@@ -8,7 +8,6 @@ import script.Script;
 import dessin_vectoriel.Chemin;
 import dessin_vectoriel.Couleur;
 import dessin_vectoriel.Element;
-import dessin_vectoriel.Forme;
 import dessin_vectoriel.Point;
 
 /**
@@ -21,7 +20,7 @@ public class CheminBuilder extends FormeBuilder{
 	
 	@Override
 	public Element getElement() {
-		return new Chemin(true, couleur, epaisseur, depart, points);
+		return Chemin.creer(true, couleur, epaisseur, depart, points);
 	}
 	
 	/**
@@ -31,7 +30,7 @@ public class CheminBuilder extends FormeBuilder{
 	 * @return le CheminBuilder this
 	 */
 	public CheminBuilder depart(int x, int y) {
-		depart = new Point(x, y);
+		depart = Point.creer(x, y);
 		return this;
 	}
 	
@@ -44,8 +43,8 @@ public class CheminBuilder extends FormeBuilder{
 	 * @return
 	 */
 	public CheminBuilder add(int x1, int y1, int x2, int y2) {
-		points.add(new Point(x1, y1));
-		points.add(new Point(x2, y2));
+		points.add(Point.creer(x1, y1));
+		points.add(Point.creer(x2, y2));
 		return this;
 	}
 	
@@ -62,7 +61,7 @@ public class CheminBuilder extends FormeBuilder{
 	@Override
 	public Script script() throws Exception {
 		//cree un chemin avec les bons parametres
-		Chemin chemin = new Chemin(true, couleur, epaisseur, depart, points);
+		Chemin chemin = Chemin.creer(true, couleur, epaisseur, depart, points);
 		//ajoute ce chemin a une liste
 		List<Element> list = new ArrayList<Element>();
 		list.add(chemin);

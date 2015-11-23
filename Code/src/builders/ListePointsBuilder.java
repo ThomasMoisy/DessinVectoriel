@@ -58,8 +58,8 @@ public class ListePointsBuilder extends ScriptBuilder {
 		for (int i = 0; i < points.size()-1; i++) {
 			Point p = points.get(i).execute();
 			Point pp = points.get(i+1).execute();
-			Vecteur v = new Vecteur(p, pp);
-			Droite d = new Droite(true, couleur, 1, v);
+			Vecteur v = Vecteur.creer(p, pp);
+			Droite d = Droite.creer(true, couleur, 1, v);
 			//ajoute les droites a une liste
 			list.add(d);
 		}

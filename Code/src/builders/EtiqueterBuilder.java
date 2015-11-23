@@ -54,8 +54,7 @@ public class EtiqueterBuilder extends ScriptBuilder {
 	
 	@Override
 	public Script script() throws Exception {
-		// TODO Auto-generated method stub
-		return new Etiqueter(associe.getElement(), couleur, epaisseur, texte, orientation,position);
+		return Etiqueter.creer(associe.getElement(), couleur, epaisseur, texte, orientation, position);
 	}
 	
 	

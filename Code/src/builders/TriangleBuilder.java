@@ -75,7 +75,7 @@ public class TriangleBuilder extends FormeBuilder {
 	 */
 	public Script script() {
 		//cree un triangle avec les bons parametres
-		Triangle triangle = new Triangle(this.remplissage, true, couleur, 1, p1, p2, p3);
+		Triangle triangle = Triangle.creer(false, true, couleur, 1, p1, p2, p3);
 		List<Element> list = new ArrayList<Element>();
 		//ajoute ce triangle a une liste
 		list.add(triangle);
@@ -85,7 +85,7 @@ public class TriangleBuilder extends FormeBuilder {
 
 	@Override
 	public Element getElement() {
-		return new Triangle(false, true, couleur, 1, p1, p2, p3);
+		return Triangle.creer(false, true, couleur, 1, p1, p2, p3);
 	}
 	
 }

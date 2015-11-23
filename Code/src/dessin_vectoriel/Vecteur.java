@@ -23,6 +23,10 @@ public class Vecteur  {
 		this.image = image;
 	}
 	
+	public static Vecteur creer(Point origine, Point image) {
+		return new Vecteur(origine, image);
+	}
+	
 	public String toString() {
 		return origine + "--" + image;
 	}

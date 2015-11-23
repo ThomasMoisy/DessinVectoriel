@@ -8,7 +8,7 @@ public abstract class FormeBuilder extends ElementBuilder{
 	Point barycentre;
 	
 	public FormeBuilder barycentre(int x, int y){
-		Point barycentre = new Point(x,y);
+		Point barycentre = Point.creer(x, y);
 		this.barycentre = barycentre;
 		return this;
 	}

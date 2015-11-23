@@ -40,10 +40,14 @@ public class Etiqueter  extends InstructionTerminale  {
 	public void setEtiquette(Etiquette etiquette) {
 		this.etiquette = etiquette;
 	}
+	
+	public static Etiqueter creer(Element element, Couleur couleur, int epaisseur, String texte,
+			Orientation orientation, Point position) {
+		return new Etiqueter(element, couleur, epaisseur, texte, orientation, position);
+	}
 
 	@Override
 	public Image executer(Image image) {
-		// TODO Auto-generated method stub
 		image.add(this.getEtiquette());
 		return image;
 	}

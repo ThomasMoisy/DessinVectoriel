@@ -25,7 +25,7 @@ public class Droite extends Element implements IElement{
 	}
 	
 	//BM : peut etre a creer dans Element et dans ce cas a appeler creerDroite
-	public Droite creer(boolean visibilite, Couleur couleur, int epaisseur, Vecteur d){
+	public static Droite creer(boolean visibilite, Couleur couleur, int epaisseur, Vecteur d){
 		return new Droite(visibilite, couleur, epaisseur, d);
 	}
 	

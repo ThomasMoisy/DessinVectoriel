@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dessin_vectoriel.Cercle;
-import dessin_vectoriel.Couleur;
 import dessin_vectoriel.Element;
 import dessin_vectoriel.Point;
 import script.Dessiner;
@@ -54,7 +53,7 @@ public class CercleBuilder extends FormeBuilder {
 	public Script script() {
 		//cree un cercle avec les bons parametres
 		
-		Cercle cercle = new Cercle(remplissage, true, couleur, epaisseur, centre, rayon);
+		Cercle cercle = Cercle.creer(false, true, couleur, 1, centre, rayon);;
 		//ajoute ce cercle a une liste
 		List<Element> list = new ArrayList<Element>();
 		list.add(cercle);
@@ -64,6 +63,6 @@ public class CercleBuilder extends FormeBuilder {
 
 	@Override
 	public Element getElement() {
-		return new Cercle(remplissage, true, couleur, epaisseur, centre, rayon);
+		return Cercle.creer(false, true, couleur, 1, centre, rayon);
 	}
 }

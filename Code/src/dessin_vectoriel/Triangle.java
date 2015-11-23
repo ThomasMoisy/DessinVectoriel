@@ -31,6 +31,10 @@ public class Triangle extends Forme implements IForme {
 		return "Triangle(" + p1 + ", " + p2 + ", " + p3 + ")";
 	}
 	
+	public static Triangle creer(boolean remplissage, boolean visibilite, Couleur couleur, int epaisseur, Point p1, Point p2, Point p3){
+		return new Triangle(remplissage, visibilite, couleur, epaisseur, p1, p2, p3);
+	}
+	
 	@Override
 	public void traduire(Traducteur traducteur) {
 		// TODO Auto-generated method stub

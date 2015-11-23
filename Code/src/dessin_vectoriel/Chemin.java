@@ -28,5 +28,7 @@ public class Chemin extends Element{
 		traducteur.traduire(this);
 	}
 	
-	
+	public static Chemin creer(boolean visibilite, Couleur couleur, int epaisseur, Point depart, List<Point> points) {
+		return new Chemin(visibilite, couleur, epaisseur, depart, points);
+	}
 }
