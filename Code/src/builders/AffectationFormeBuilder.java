@@ -4,6 +4,9 @@ import script.AffectationForme;
 import script.ContexteElement;
 import script.Script;
 
+/**
+ * AffectationFormeBuilder qui permet d'affecter une forme à une variable
+ */
 public class AffectationFormeBuilder extends ScriptBuilder{
 	String identifiant;
 	ElementBuilder builder;

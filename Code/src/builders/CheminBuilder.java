@@ -11,27 +11,49 @@ import dessin_vectoriel.Element;
 import dessin_vectoriel.Forme;
 import dessin_vectoriel.Point;
 
+/**
+ * CheminBuilder qui contient des methodes pour construire les  
+ * parametres d'une instruction dessiner(chemin)
+ */
 public class CheminBuilder extends FormeBuilder{
 	Point depart;
 	List<Point> points = new ArrayList<Point>();
 	
 	@Override
-	public Forme getElement() {
-		// TODO Auto-generated method stub
-		return null;
+	public Element getElement() {
+		return new Chemin(true, couleur, epaisseur, depart, points);
 	}
 	
+	/**
+	 * regle le point de depart de la courbe
+	 * @param x l'abscisse
+	 * @param y l'ordonnee
+	 * @return le CheminBuilder this
+	 */
 	public CheminBuilder depart(int x, int y) {
 		depart = new Point(x, y);
 		return this;
 	}
 	
+	/**
+	 * ajoute un couple (point_de_controle, point d'arrivee) au chemin this
+	 * @param x1 l'abscisse du point de controle
+	 * @param y1 l'ordonee du point de controle
+	 * @param x2 l'abscisse du point d'arrivee
+	 * @param y2 l'ordonee du point d'arrivee
+	 * @return
+	 */
 	public CheminBuilder add(int x1, int y1, int x2, int y2) {
 		points.add(new Point(x1, y1));
 		points.add(new Point(x2, y2));
 		return this;
 	}
 	
+	/**
+	 * regle la couleur de la courbe
+	 * @param couleur
+	 * @return le CheminBuilder this
+	 */
 	public CheminBuilder couleur(Couleur couleur) {
 		this.couleur = couleur;
 		return this;
