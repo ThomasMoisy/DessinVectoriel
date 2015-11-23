@@ -37,7 +37,7 @@ script : InstructionTerminale
 Sequence : scripts* ;
 For      : 'for 0 to n' Sequence ;
 Alternative : condition '?' script ':' script ;
-InstructionTerminale : 'dessiner' | 'remplir' | 'insérer' | 'étiqueter' ;
+InstructionTerminale : 'dessiner' | 'remplir' | 'étiqueter' ;
 ````
 
 ###b. Structure du package dessin vectoriel
@@ -86,5 +86,5 @@ Pour effectuer la traduction avec un traducteur choisi, on utilise le patron Vis
 
 ##2. Points à améliorer :
 
-- Insérer : pas implémenter et pas vu l'utilité
+- Insérer : à notre sens, la fonction d'insertion doit permettre d'insérer une forme dans une autre forme. Nous ne savions pas comment déterminer si une forme peut ou ne peut pas être insérée à l'intérieur d'une autre. Nous n'avons donc pas implémenté cette fonctionnalité.
 - 
