@@ -92,7 +92,7 @@ public class Main {
 				.add(new RectangleBuilder()
 						.hauteur(50)
 						.longueur(60)
-						.barycentre(new Point (250,250))
+						.barycentre(250,250)
 						.couleur(Couleur.YELLOW)
 						.epaisseur(20)
 						.script())

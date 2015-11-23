@@ -7,7 +7,8 @@ public abstract class FormeBuilder extends ElementBuilder{
 	boolean remplissage = false;
 	Point barycentre;
 	
-	public FormeBuilder barycentre(Point barycentre){
+	public FormeBuilder barycentre(int x, int y){
+		Point barycentre = new Point(x,y);
 		this.barycentre = barycentre;
 		return this;
 	}
